@@ -1,0 +1,311 @@
+.iphone {
+  background-color: #d5c3a1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.iphone .div {
+  background-color: #d5c3a1;
+  height: 852px;
+  position: relative;
+  width: 393px;
+}
+
+.iphone .overlap {
+  height: 90px;
+  left: 3px;
+  position: absolute;
+  top: 11px;
+  width: 386px;
+}
+
+.iphone .text-wrapper {
+  color: #000000;
+  font-family: "Playfair", Helvetica;
+  font-size: 52px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 33px;
+  white-space: nowrap;
+  width: 386px;
+}
+
+.iphone .group {
+  height: 37px;
+  left: 13px;
+  position: absolute;
+  top: 0;
+  width: 361px;
+}
+
+.iphone .overlap-group {
+  background-color: #b8794b;
+  border-radius: 5px;
+  height: 37px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 44px;
+}
+
+.iphone .vector {
+  height: 18px;
+  left: 11px;
+  position: absolute;
+  top: 9px;
+  width: 22px;
+}
+
+.iphone .vector-wrapper {
+  background-color: #b8794b;
+  border-radius: 5px;
+  height: 37px;
+  left: 317px;
+  position: absolute;
+  top: 0;
+  width: 44px;
+}
+
+.iphone .overlap-2 {
+  background-image: url(https://c.animaapp.com/CnZY7exJ/img/rectangle-53.svg);
+  background-size: 100% 100%;
+  height: 167px;
+  left: 14px;
+  position: absolute;
+  top: 515px;
+  width: 364px;
+}
+
+.iphone .overlap-3 {
+  height: 38px;
+  left: 16px;
+  position: absolute;
+  top: 9px;
+  width: 335px;
+}
+
+.iphone .text-wrapper-2 {
+  color: #ffffff;
+  font-family: "Open Sans", Helvetica;
+  font-size: 28px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  width: 286px;
+}
+
+.iphone .rectangle {
+  height: 23px;
+  left: 206px;
+  position: absolute;
+  top: 11px;
+  width: 129px;
+}
+
+.iphone .text-wrapper-3 {
+  color: #000000;
+  font-family: "Playfair", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 213px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 13px;
+}
+
+.iphone .overlap-4 {
+  background-color: #f5f0e1;
+  border: 2px solid;
+  border-color: #6c7b5b;
+  border-radius: 15px;
+  height: 95px;
+  left: 17px;
+  position: absolute;
+  top: 59px;
+  width: 195px;
+}
+
+.iphone .timemore {
+  color: #000000;
+  font-family: "Open Sans", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 85px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 24px;
+  width: 103px;
+}
+
+.iphone .shopping {
+  height: 78px;
+  left: 13px;
+  object-fit: cover;
+  position: absolute;
+  top: 7px;
+  width: 82px;
+}
+
+.iphone .overlap-5 {
+  height: 97px;
+  left: 224px;
+  position: absolute;
+  top: 59px;
+  width: 124px;
+}
+
+.iphone .rectangle-2 {
+  background-color: #f5f0e1;
+  border: 2px solid;
+  border-color: #6c7b5b;
+  border-radius: 15px;
+  height: 95px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 124px;
+}
+
+.iphone .element-f {
+  height: 61px;
+  left: 11px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 103px;
+}
+
+.iphone .text-wrapper-4 {
+  color: #000000;
+  font-family: "Open Sans", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 11px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 60px;
+  width: 103px;
+}
+
+.iphone .overlap-6 {
+  background-image: url(https://c.animaapp.com/CnZY7exJ/img/rectangle-77.svg);
+  background-size: 100% 100%;
+  height: 167px;
+  left: 14px;
+  position: absolute;
+  top: 323px;
+  width: 364px;
+}
+
+.iphone .overlap-7 {
+  height: 95px;
+  left: 60px;
+  position: absolute;
+  top: 61px;
+  width: 242px;
+}
+
+.iphone .rectangle-3 {
+  background-color: #f5f0e1;
+  border: 2px solid;
+  border-color: #8c5a3e;
+  border-radius: 15px;
+  height: 95px;
+  left: 2px;
+  position: absolute;
+  top: 0;
+  width: 240px;
+}
+
+.iphone .delonghi-bar {
+  height: 85px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 5px;
+  width: 108px;
+}
+
+.iphone .de-longhi {
+  color: #000000;
+  font-family: "Open Sans", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 118px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 21px;
+  width: 103px;
+}
+
+.iphone .overlap-8 {
+  height: 38px;
+  left: 16px;
+  position: absolute;
+  top: 9px;
+  width: 337px;
+}
+
+.iphone .img {
+  height: 23px;
+  left: 208px;
+  position: absolute;
+  top: 11px;
+  width: 129px;
+}
+
+.iphone .LOGO {
+  height: 205px;
+  left: 92px;
+  position: absolute;
+  top: 105px;
+  width: 208px;
+}
+
+.iphone .overlap-9 {
+  height: 107px;
+  left: 14px;
+  position: absolute;
+  top: 703px;
+  width: 364px;
+}
+
+.iphone .rectangle-4 {
+  height: 101px;
+  left: 0;
+  position: absolute;
+  top: 6px;
+  width: 364px;
+}
+
+.iphone .continue-to-drink {
+  color: #ffffff;
+  font-family: "Open Sans", Helvetica;
+  font-size: 32px;
+  font-weight: 700;
+  height: 106px;
+  left: 2px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 362px;
+}
+
