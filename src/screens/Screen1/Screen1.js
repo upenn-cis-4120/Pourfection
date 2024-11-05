@@ -1,9 +1,9 @@
 import React from "react";
 import "./style.css";
 
-export const Iphone = () => {
+export const Screen1 = () => {
   return (
-    <div className="iphone">
+    <div className="Screen1">
       <div className="div">
         <div className="overlap">
           <div className="text-wrapper">Pourfection</div>

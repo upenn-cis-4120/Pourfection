@@ -1,4 +1,4 @@
-.iphone {
+.Screen1 {
   background-color: #d5c3a1;
   display: flex;
   flex-direction: row;
@@ -6,14 +6,14 @@
   width: 100%;
 }
 
-.iphone .div {
+.Screen1 .div {
   background-color: #d5c3a1;
   height: 852px;
   position: relative;
   width: 393px;
 }
 
-.iphone .overlap {
+.Screen1 .overlap {
   height: 90px;
   left: 3px;
   position: absolute;
@@ -21,7 +21,7 @@
   width: 386px;
 }
 
-.iphone .text-wrapper {
+.Screen1 .text-wrapper {
   color: #000000;
   font-family: "Playfair", Helvetica;
   font-size: 52px;
@@ -36,7 +36,7 @@
   width: 386px;
 }
 
-.iphone .group {
+.Screen1 .group {
   height: 37px;
   left: 13px;
   position: absolute;
@@ -44,7 +44,7 @@
   width: 361px;
 }
 
-.iphone .overlap-group {
+.Screen1 .overlap-group {
   background-color: #b8794b;
   border-radius: 5px;
   height: 37px;
@@ -54,7 +54,7 @@
   width: 44px;
 }
 
-.iphone .vector {
+.Screen1 .vector {
   height: 18px;
   left: 11px;
   position: absolute;
@@ -62,7 +62,7 @@
   width: 22px;
 }
 
-.iphone .vector-wrapper {
+.Screen1 .vector-wrapper {
   background-color: #b8794b;
   border-radius: 5px;
   height: 37px;
@@ -72,7 +72,7 @@
   width: 44px;
 }
 
-.iphone .overlap-2 {
+.Screen1 .overlap-2 {
   background-image: url(https://c.animaapp.com/CnZY7exJ/img/rectangle-53.svg);
   background-size: 100% 100%;
   height: 167px;
@@ -82,7 +82,7 @@
   width: 364px;
 }
 
-.iphone .overlap-3 {
+.Screen1 .overlap-3 {
   height: 38px;
   left: 16px;
   position: absolute;
@@ -90,7 +90,7 @@
   width: 335px;
 }
 
-.iphone .text-wrapper-2 {
+.Screen1 .text-wrapper-2 {
   color: #ffffff;
   font-family: "Open Sans", Helvetica;
   font-size: 28px;
@@ -103,7 +103,7 @@
   width: 286px;
 }
 
-.iphone .rectangle {
+.Screen1 .rectangle {
   height: 23px;
   left: 206px;
   position: absolute;
@@ -111,7 +111,7 @@
   width: 129px;
 }
 
-.iphone .text-wrapper-3 {
+.Screen1 .text-wrapper-3 {
   color: #000000;
   font-family: "Playfair", Helvetica;
   font-size: 14px;
@@ -123,7 +123,7 @@
   top: 13px;
 }
 
-.iphone .overlap-4 {
+.Screen1 .overlap-4 {
   background-color: #f5f0e1;
   border: 2px solid;
   border-color: #6c7b5b;
@@ -135,7 +135,7 @@
   width: 195px;
 }
 
-.iphone .timemore {
+.Screen1 .timemore {
   color: #000000;
   font-family: "Open Sans", Helvetica;
   font-size: 20px;
@@ -149,7 +149,7 @@
   width: 103px;
 }
 
-.iphone .shopping {
+.Screen1 .shopping {
   height: 78px;
   left: 13px;
   object-fit: cover;
@@ -158,7 +158,7 @@
   width: 82px;
 }
 
-.iphone .overlap-5 {
+.Screen1 .overlap-5 {
   height: 97px;
   left: 224px;
   position: absolute;
@@ -166,7 +166,7 @@
   width: 124px;
 }
 
-.iphone .rectangle-2 {
+.Screen1 .rectangle-2 {
   background-color: #f5f0e1;
   border: 2px solid;
   border-color: #6c7b5b;
@@ -178,7 +178,7 @@
   width: 124px;
 }
 
-.iphone .element-f {
+.Screen1 .element-f {
   height: 61px;
   left: 11px;
   object-fit: cover;
@@ -187,7 +187,7 @@
   width: 103px;
 }
 
-.iphone .text-wrapper-4 {
+.Screen1 .text-wrapper-4 {
   color: #000000;
   font-family: "Open Sans", Helvetica;
   font-size: 20px;
@@ -201,7 +201,7 @@
   width: 103px;
 }
 
-.iphone .overlap-6 {
+.Screen1 .overlap-6 {
   background-image: url(https://c.animaapp.com/CnZY7exJ/img/rectangle-77.svg);
   background-size: 100% 100%;
   height: 167px;
@@ -211,7 +211,7 @@
   width: 364px;
 }
 
-.iphone .overlap-7 {
+.Screen1 .overlap-7 {
   height: 95px;
   left: 60px;
   position: absolute;
@@ -219,7 +219,7 @@
   width: 242px;
 }
 
-.iphone .rectangle-3 {
+.Screen1 .rectangle-3 {
   background-color: #f5f0e1;
   border: 2px solid;
   border-color: #8c5a3e;
@@ -231,7 +231,7 @@
   width: 240px;
 }
 
-.iphone .delonghi-bar {
+.Screen1 .delonghi-bar {
   height: 85px;
   left: 0;
   object-fit: cover;
@@ -240,7 +240,7 @@
   width: 108px;
 }
 
-.iphone .de-longhi {
+.Screen1 .de-longhi {
   color: #000000;
   font-family: "Open Sans", Helvetica;
   font-size: 20px;
@@ -254,7 +254,7 @@
   width: 103px;
 }
 
-.iphone .overlap-8 {
+.Screen1 .overlap-8 {
   height: 38px;
   left: 16px;
   position: absolute;
@@ -262,7 +262,7 @@
   width: 337px;
 }
 
-.iphone .img {
+.Screen1 .img {
   height: 23px;
   left: 208px;
   position: absolute;
@@ -270,7 +270,7 @@
   width: 129px;
 }
 
-.iphone .LOGO {
+.Screen1 .LOGO {
   height: 205px;
   left: 92px;
   position: absolute;
@@ -278,7 +278,7 @@
   width: 208px;
 }
 
-.iphone .overlap-9 {
+.Screen1 .overlap-9 {
   height: 107px;
   left: 14px;
   position: absolute;
@@ -286,7 +286,7 @@
   width: 364px;
 }
 
-.iphone .rectangle-4 {
+.Screen1 .rectangle-4 {
   height: 101px;
   left: 0;
   position: absolute;
@@ -294,7 +294,7 @@
   width: 364px;
 }
 
-.iphone .continue-to-drink {
+.Screen1 .continue-to-drink {
   color: #ffffff;
   font-family: "Open Sans", Helvetica;
   font-size: 32px;
