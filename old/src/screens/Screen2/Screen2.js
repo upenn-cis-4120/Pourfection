@@ -1,9 +1,9 @@
 import React from "react";
 import "./style.css";
 
-export const Iphone = () => {
+export const Screen2 = () => {
   return (
-    <div className="iphone">
+    <div className="Screen2">
       <div className="div">
         <div className="overlap">
           <div className="text-wrapper">Drink Selection</div>
@@ -14,7 +14,7 @@ export const Iphone = () => {
                 <img
                   className="vector"
                   alt="Vector"
-                  src="https://c.animaapp.com/bMXVElHH/img/vector.svg"
+                  src="https://c.animaapp.com/wwRebUI3/img/vector.svg"
                 />
               </div>
 
@@ -22,7 +22,7 @@ export const Iphone = () => {
                 <img
                   className="vector"
                   alt="Vector"
-                  src="https://c.animaapp.com/bMXVElHH/img/vector-1.svg"
+                  src="https://c.animaapp.com/wwRebUI3/img/vector-1.svg"
                 />
               </div>
             </div>
@@ -32,31 +32,31 @@ export const Iphone = () => {
         <img
           className="rectangle"
           alt="Rectangle"
-          src="https://c.animaapp.com/bMXVElHH/img/rectangle-42.svg"
+          src="https://c.animaapp.com/wwRebUI3/img/rectangle-42.svg"
         />
 
         <img
           className="img"
           alt="Rectangle"
-          src="https://c.animaapp.com/bMXVElHH/img/rectangle-43.svg"
+          src="https://c.animaapp.com/wwRebUI3/img/rectangle-43.svg"
         />
 
         <img
           className="rectangle-2"
           alt="Rectangle"
-          src="https://c.animaapp.com/bMXVElHH/img/rectangle-44.svg"
+          src="https://c.animaapp.com/wwRebUI3/img/rectangle-44.svg"
         />
 
         <img
           className="rectangle-3"
           alt="Rectangle"
-          src="https://c.animaapp.com/bMXVElHH/img/rectangle-45.svg"
+          src="https://c.animaapp.com/wwRebUI3/img/rectangle-45.svg"
         />
 
         <img
           className="rectangle-4"
           alt="Rectangle"
-          src="https://c.animaapp.com/bMXVElHH/img/rectangle-46.svg"
+          src="https://c.animaapp.com/wwRebUI3/img/rectangle-46.svg"
         />
 
         <div className="overlap-2">
@@ -67,7 +67,7 @@ export const Iphone = () => {
           <img
             className="rectangle-5"
             alt="Rectangle"
-            src="https://c.animaapp.com/bMXVElHH/img/rectangle-58.svg"
+            src="https://c.animaapp.com/wwRebUI3/img/rectangle-58.svg"
           />
 
           <div className="text-wrapper-4">Done</div>
@@ -75,21 +75,21 @@ export const Iphone = () => {
           <img
             className="coffee-beans"
             alt="Coffee beans"
-            src="https://c.animaapp.com/bMXVElHH/img/coffee-beans@2x.png"
+            src="https://c.animaapp.com/wwRebUI3/img/coffee-beans@2x.png"
           />
         </div>
 
         <img
           className="rectangle-6"
           alt="Rectangle"
-          src="https://c.animaapp.com/bMXVElHH/img/rectangle-47.svg"
+          src="https://c.animaapp.com/wwRebUI3/img/rectangle-47.svg"
         />
 
         <div className="overlap-3">
           <img
             className="rectangle-7"
             alt="Rectangle"
-            src="https://c.animaapp.com/bMXVElHH/img/rectangle-52.svg"
+            src="https://c.animaapp.com/wwRebUI3/img/rectangle-52.svg"
           />
 
           <div className="text-wrapper-5">Other:</div>
@@ -100,4 +100,3 @@ export const Iphone = () => {
     </div>
   );
 };
-

@@ -1,0 +1,200 @@
+.Screen7 {
+  background-color: #d5c3a1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.Screen7 .div {
+  background-color: #d5c3a1;
+  height: 852px;
+  position: relative;
+  width: 393px;
+}
+
+.Screen7 .overlap {
+  height: 125px;
+  left: 16px;
+  position: absolute;
+  top: 11px;
+  width: 361px;
+}
+
+.Screen7 .text-wrapper {
+  color: #000000;
+  font-family: "Playfair", Helvetica;
+  font-size: 56px;
+  font-weight: 400;
+  left: 33px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 36px;
+  width: 295px;
+}
+
+.Screen7 .frame {
+  height: 37px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 361px;
+}
+
+.Screen7 .group {
+  height: 37px;
+  position: relative;
+}
+
+.Screen7 .overlap-group {
+  background-color: #b8794b;
+  border-radius: 5px;
+  height: 37px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 44px;
+}
+
+.Screen7 .vector {
+  height: 18px;
+  left: 11px;
+  position: absolute;
+  top: 9px;
+  width: 22px;
+}
+
+.Screen7 .vector-wrapper {
+  background-color: #b8794b;
+  border-radius: 5px;
+  height: 37px;
+  left: 317px;
+  position: absolute;
+  top: 0;
+  width: 44px;
+}
+
+.Screen7 .frame-2 {
+  background-color: #7b8d42;
+  border-radius: 15px;
+  height: 338px;
+  left: 27px;
+  overflow: hidden;
+  position: absolute;
+  top: 343px;
+  width: 338px;
+}
+
+.Screen7 .text-wrapper-2 {
+  color: #f5f0e1;
+  font-family: "Open Sans", Helvetica;
+  font-size: 86px;
+  font-weight: 300;
+  height: 100px;
+  left: 38px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 118px;
+  white-space: nowrap;
+  width: 262px;
+}
+
+.Screen7 .btn {
+  height: 72px;
+  left: 58px;
+  position: absolute;
+  top: 244px;
+  width: 222px;
+}
+
+.Screen7 .frame-wrapper {
+  background-color: #b8794b;
+  border: 3px solid;
+  border-color: #8c5a3e;
+  border-radius: 15px;
+  height: 99px;
+  left: 28px;
+  overflow: hidden;
+  position: absolute;
+  top: 715px;
+  width: 338px;
+}
+
+.Screen7 .frame-3 {
+  background-color: #b8794b;
+  border-radius: 15px;
+  height: 99px;
+  overflow: hidden;
+  position: relative;
+}
+
+.Screen7 .text-wrapper-3 {
+  color: #ffffff;
+  font-family: "Open Sans", Helvetica;
+  font-size: 36px;
+  font-weight: 700;
+  height: 99px;
+  left: 169px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: -1px;
+  width: 131px;
+}
+
+.Screen7 .coffee-beans {
+  height: 96px;
+  left: 41px;
+  position: absolute;
+  top: 3px;
+  width: 96px;
+}
+
+.Screen7 .overlap-2 {
+  background-image: url(https://c.animaapp.com/wpzryagg/img/rectangle-51.svg);
+  background-size: 100% 100%;
+  height: 96px;
+  left: 27px;
+  position: absolute;
+  top: 213px;
+  width: 338px;
+}
+
+.Screen7 .rectangle {
+  height: 96px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 338px;
+}
+
+.Screen7 .recommended {
+  color: #ffffff;
+  font-family: "Open Sans", Helvetica;
+  font-size: 28px;
+  font-weight: 400;
+  left: 65px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 9px;
+}
+
+.Screen7 .span {
+  color: #ffffff;
+  font-family: "Open Sans", Helvetica;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.Screen7 .text-wrapper-4 {
+  font-weight: 700;
+}
+
