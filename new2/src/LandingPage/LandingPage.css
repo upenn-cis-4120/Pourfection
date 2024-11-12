@@ -1,0 +1,311 @@
+.LandingPage {
+  background-color: #d5c3a1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.LandingPage .div {
+  background-color: #d5c3a1;
+  height: 852px;
+  position: relative;
+  width: 393px;
+}
+
+.LandingPage .overlap {
+  height: 90px;
+  left: 3px;
+  position: absolute;
+  top: 11px;
+  width: 386px;
+}
+
+.LandingPage .text-wrapper {
+  color: #000000;
+  font-family: "Playfair", Helvetica;
+  font-size: 52px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 33px;
+  white-space: nowrap;
+  width: 386px;
+}
+
+.LandingPage .group {
+  height: 37px;
+  left: 13px;
+  position: absolute;
+  top: 0;
+  width: 361px;
+}
+
+.LandingPage .overlap-group {
+  background-color: #b8794b;
+  border-radius: 5px;
+  height: 37px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 44px;
+}
+
+.LandingPage .vector {
+  height: 18px;
+  left: 11px;
+  position: absolute;
+  top: 9px;
+  width: 22px;
+}
+
+.LandingPage .vector-wrapper {
+  background-color: #b8794b;
+  border-radius: 5px;
+  height: 37px;
+  left: 317px;
+  position: absolute;
+  top: 0;
+  width: 44px;
+}
+
+.LandingPage .overlap-2 {
+  background-image: url(https://c.animaapp.com/CnZY7exJ/img/rectangle-53.svg);
+  background-size: 100% 100%;
+  height: 167px;
+  left: 14px;
+  position: absolute;
+  top: 515px;
+  width: 364px;
+}
+
+.LandingPage .overlap-3 {
+  height: 38px;
+  left: 16px;
+  position: absolute;
+  top: 9px;
+  width: 335px;
+}
+
+.LandingPage .text-wrapper-2 {
+  color: #ffffff;
+  font-family: "Open Sans", Helvetica;
+  font-size: 28px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  width: 286px;
+}
+
+.LandingPage .rectangle {
+  height: 23px;
+  left: 206px;
+  position: absolute;
+  top: 11px;
+  width: 129px;
+}
+
+.LandingPage .text-wrapper-3 {
+  color: #000000;
+  font-family: "Playfair", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 213px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 13px;
+}
+
+.LandingPage .overlap-4 {
+  background-color: #f5f0e1;
+  border: 2px solid;
+  border-color: #6c7b5b;
+  border-radius: 15px;
+  height: 95px;
+  left: 17px;
+  position: absolute;
+  top: 59px;
+  width: 195px;
+}
+
+.LandingPage .timemore {
+  color: #000000;
+  font-family: "Open Sans", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 85px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 24px;
+  width: 103px;
+}
+
+.LandingPage .shopping {
+  height: 78px;
+  left: 13px;
+  object-fit: cover;
+  position: absolute;
+  top: 7px;
+  width: 82px;
+}
+
+.LandingPage .overlap-5 {
+  height: 97px;
+  left: 224px;
+  position: absolute;
+  top: 59px;
+  width: 124px;
+}
+
+.LandingPage .rectangle-2 {
+  background-color: #f5f0e1;
+  border: 2px solid;
+  border-color: #6c7b5b;
+  border-radius: 15px;
+  height: 95px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 124px;
+}
+
+.LandingPage .element-f {
+  height: 61px;
+  left: 11px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 103px;
+}
+
+.LandingPage .text-wrapper-4 {
+  color: #000000;
+  font-family: "Open Sans", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 11px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 60px;
+  width: 103px;
+}
+
+.LandingPage .overlap-6 {
+  background-image: url(https://c.animaapp.com/CnZY7exJ/img/rectangle-77.svg);
+  background-size: 100% 100%;
+  height: 167px;
+  left: 14px;
+  position: absolute;
+  top: 323px;
+  width: 364px;
+}
+
+.LandingPage .overlap-7 {
+  height: 95px;
+  left: 60px;
+  position: absolute;
+  top: 61px;
+  width: 242px;
+}
+
+.LandingPage .rectangle-3 {
+  background-color: #f5f0e1;
+  border: 2px solid;
+  border-color: #8c5a3e;
+  border-radius: 15px;
+  height: 95px;
+  left: 2px;
+  position: absolute;
+  top: 0;
+  width: 240px;
+}
+
+.LandingPage .delonghi-bar {
+  height: 85px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 5px;
+  width: 108px;
+}
+
+.LandingPage .de-longhi {
+  color: #000000;
+  font-family: "Open Sans", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 118px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 21px;
+  width: 103px;
+}
+
+.LandingPage .overlap-8 {
+  height: 38px;
+  left: 16px;
+  position: absolute;
+  top: 9px;
+  width: 337px;
+}
+
+.LandingPage .img {
+  height: 23px;
+  left: 208px;
+  position: absolute;
+  top: 11px;
+  width: 129px;
+}
+
+.LandingPage .LOGO {
+  height: 205px;
+  left: 92px;
+  position: absolute;
+  top: 105px;
+  width: 208px;
+}
+
+.LandingPage .overlap-9 {
+  height: 107px;
+  left: 14px;
+  position: absolute;
+  top: 703px;
+  width: 364px;
+}
+
+.LandingPage .rectangle-4 {
+  height: 101px;
+  left: 0;
+  position: absolute;
+  top: 6px;
+  width: 364px;
+}
+
+.LandingPage .continue-to-drink {
+  color: #ffffff;
+  font-family: "Open Sans", Helvetica;
+  font-size: 32px;
+  font-weight: 700;
+  height: 106px;
+  left: 2px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 20px;
+  width: 362px;
+}
+

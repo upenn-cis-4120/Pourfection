@@ -1,0 +1,312 @@
+.ExtractionSettings {
+  background-color: #d5c3a1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.ExtractionSettings .div {
+  background-color: #d5c3a1;
+  height: 852px;
+  position: relative;
+  width: 393px;
+}
+
+.ExtractionSettings .overlap {
+  height: 89px;
+  left: 16px;
+  position: absolute;
+  top: 13px;
+  width: 361px;
+}
+
+.ExtractionSettings .text-wrapper {
+  color: #000000;
+  font-family: "Playfair", Helvetica;
+  font-size: 56px;
+  font-weight: 400;
+  left: 11px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 33px;
+  white-space: nowrap;
+  width: 338px;
+}
+
+.ExtractionSettings .frame {
+  height: 37px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 361px;
+}
+
+.ExtractionSettings .group {
+  height: 37px;
+  position: relative;
+}
+
+.ExtractionSettings .overlap-group {
+  background-color: #b8794b;
+  border-radius: 5px;
+  height: 37px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 44px;
+}
+
+.ExtractionSettings .vector {
+  height: 18px;
+  left: 11px;
+  position: absolute;
+  top: 9px;
+  width: 22px;
+}
+
+.ExtractionSettings .vector-wrapper {
+  background-color: #b8794b;
+  border-radius: 5px;
+  height: 37px;
+  left: 317px;
+  position: absolute;
+  top: 0;
+  width: 44px;
+}
+
+.ExtractionSettings .div-wrapper {
+  background-image: url(https://c.animaapp.com/S3wv82L4/img/rectangle-46.svg);
+  background-size: 100% 100%;
+  height: 69px;
+  left: 248px;
+  position: absolute;
+  top: 223px;
+  width: 119px;
+}
+
+.ExtractionSettings .text-wrapper-2 {
+  color: #ffffff;
+  font-family: "Open Sans", Helvetica;
+  font-size: 28px;
+  font-weight: 400;
+  left: 41px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 14px;
+}
+
+.ExtractionSettings .text-wrapper-3 {
+  color: #000000;
+  font-family: "Open Sans", Helvetica;
+  font-size: 28px;
+  font-weight: 400;
+  left: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 233px;
+  width: 223px;
+}
+
+.ExtractionSettings .overlap-2 {
+  background-image: url(https://c.animaapp.com/S3wv82L4/img/rectangle-46.svg);
+  background-size: 100% 100%;
+  height: 69px;
+  left: 248px;
+  position: absolute;
+  top: 319px;
+  width: 119px;
+}
+
+.ExtractionSettings .text-wrapper-4 {
+  color: #ffffff;
+  font-family: "Open Sans", Helvetica;
+  font-size: 28px;
+  font-weight: 400;
+  left: 39px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 14px;
+}
+
+.ExtractionSettings .text-wrapper-5 {
+  color: #000000;
+  font-family: "Open Sans", Helvetica;
+  font-size: 28px;
+  font-weight: 400;
+  left: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 329px;
+  width: 223px;
+}
+
+.ExtractionSettings .overlap-3 {
+  background-image: url(https://c.animaapp.com/S3wv82L4/img/rectangle-46.svg);
+  background-size: 100% 100%;
+  height: 69px;
+  left: 248px;
+  position: absolute;
+  top: 406px;
+  width: 119px;
+}
+
+.ExtractionSettings .text-wrapper-6 {
+  color: #ffffff;
+  font-family: "Open Sans", Helvetica;
+  font-size: 28px;
+  font-weight: 400;
+  left: 23px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 15px;
+}
+
+.ExtractionSettings .pressure {
+  color: #000000;
+  font-family: "Open Sans", Helvetica;
+  font-size: 28px;
+  font-weight: 400;
+  left: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 416px;
+  width: 223px;
+}
+
+.ExtractionSettings .span {
+  color: #000000;
+  font-family: "Open Sans", Helvetica;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.ExtractionSettings .text-wrapper-7 {
+  font-size: 32px;
+}
+
+.ExtractionSettings .overlap-4 {
+  background-image: url(https://c.animaapp.com/S3wv82L4/img/rectangle-46.svg);
+  background-size: 100% 100%;
+  height: 69px;
+  left: 248px;
+  position: absolute;
+  top: 493px;
+  width: 119px;
+}
+
+.ExtractionSettings .text-wrapper-8 {
+  color: #ffffff;
+  font-family: "Open Sans", Helvetica;
+  font-size: 28px;
+  font-weight: 400;
+  left: 33px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 14px;
+}
+
+.ExtractionSettings .overlap-5 {
+  background-image: url(https://c.animaapp.com/S3wv82L4/img/rectangle-50.svg);
+  background-size: 100% 100%;
+  height: 62px;
+  left: 14px;
+  position: absolute;
+  top: 622px;
+  width: 176px;
+}
+
+.ExtractionSettings .text-wrapper-9 {
+  color: #ffffff;
+  font-family: "Open Sans", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 17px;
+}
+
+.ExtractionSettings .overlap-6 {
+  height: 100px;
+  left: 14px;
+  position: absolute;
+  top: 716px;
+  width: 338px;
+}
+
+.ExtractionSettings .rectangle {
+  height: 99px;
+  left: 0;
+  position: absolute;
+  top: 1px;
+  width: 338px;
+}
+
+.ExtractionSettings .text-wrapper-10 {
+  color: #ffffff;
+  font-family: "Open Sans", Helvetica;
+  font-size: 32px;
+  font-weight: 700;
+  height: 99px;
+  left: 108px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 122px;
+}
+
+.ExtractionSettings .text-wrapper-11 {
+  color: #000000;
+  font-family: "Open Sans", Helvetica;
+  font-size: 28px;
+  font-weight: 400;
+  left: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 503px;
+  width: 223px;
+}
+
+.ExtractionSettings .overlap-7 {
+  background-image: url(https://c.animaapp.com/S3wv82L4/img/rectangle-50.svg);
+  background-size: 100% 100%;
+  height: 62px;
+  left: 202px;
+  position: absolute;
+  top: 622px;
+  width: 176px;
+}
+
+.ExtractionSettings .text-wrapper-12 {
+  color: #ffffff;
+  font-family: "Open Sans", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 17px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 17px;
+}
+
