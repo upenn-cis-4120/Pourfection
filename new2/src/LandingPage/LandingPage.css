@@ -112,15 +112,18 @@
 }
 
 .LandingPage .text-wrapper-3 {
+  background-color: transparent;
+  border: none;
+  outline: none;
   color: #000000;
-  font-family: "Playfair", Helvetica;
+  font-family: "Open Sans", Helvetica;
   font-size: 14px;
   font-weight: 400;
-  left: 213px;
-  letter-spacing: 0;
-  line-height: normal;
   position: absolute;
-  top: 13px;
+  left: 108px; /* Adjust as needed */
+  top: 1px; /* Adjust as needed */
+  width: 335px; /* Adjust as needed */
+  height: 38px; /* Adjust as needed */
 }
 
 .LandingPage .overlap-4 {

@@ -108,7 +108,7 @@ export const DrinkSelect = ({ switchPage }) => {
 
           <div className="text-wrapper-5">Other:</div>
 
-          <div className="text-wrapper-6">type here</div>
+          <input className="text-wrapper-6" type="text" placeholder="type here" />
         </div>
       </div>
     </div>
