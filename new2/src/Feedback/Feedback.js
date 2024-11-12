@@ -1,19 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Feedback.css";
 
 export const Feedback = ({ switchPage }) => {
+  const [suggestion, setSuggestion] = useState("");
+
   return (
     <div className="Feedback">
       <div className="div">
-        <div className="text-wrapper">Feedback</div>
+        <div className="text-wrapper-title">Feedback</div>
 
         <div className="text-wrapper-2">Weight used:</div>
+        <div className="overlap-group">
+            <img
+              className="img"
+              alt="Rectangle"
+              src="/imagesFeedback/rectangle-60.svg"
+            />
+            <input
+              type="text"
+              className="text-wrapper-opensans-common"
+              defaultValue="8g"
+            />
+        </div>
 
         <div className="text-wrapper-3">Grind size:</div>
+        <div className="overlap-2">
+          <img
+            className="rectangle-2"
+            alt="Rectangle"
+            src="/imagesFeedback/rectangle-60.svg"
+          />
+          <input
+            type="text"
+            className="text-wrapper-opensans-common"
+            defaultValue="4.5"
+          />
+        </div>
 
         <div className="text-wrapper-4">Pressure:</div>
+        <div className="overlap-3">
+          <img
+            className="img"
+            alt="Rectangle"
+            src="/imagesFeedback/rectangle-60.svg"
+          />
+          <input
+            type="text"
+            className="text-wrapper-opensans-common"
+            defaultValue="9 bars"
+          />
+        </div>
 
         <div className="text-wrapper-5">Extraction Time:</div>
+        <div className="overlap-4">
+          <img
+            className="rectangle-2"
+            alt="Rectangle"
+            src="/imagesFeedback/rectangle-60.svg"
+          />
+          <input
+            type="text"
+            className="text-wrapper-opensans-common"
+            defaultValue="18s"
+          />
+        </div>
 
         <div className="text-wrapper-6">Common Problems?</div>
 
@@ -25,55 +75,14 @@ export const Feedback = ({ switchPage }) => {
           />
 
           <div className="text-wrapper-7">Other:</div>
-
           <div className="text-wrapper-8">type here</div>
         </div>
 
-        <div className="overlap-group">
-          <img
-            className="img"
-            alt="Rectangle"
-            src="/imagesFeedback/rectangle-60.svg"
-          />
-
-          <div className="text-wrapper-9">8 g</div>
-        </div>
-
-        <div className="overlap-2">
-          <img
-            className="rectangle-2"
-            alt="Rectangle"
-            src="/imagesFeedback/rectangle-60.svg"
-          />
-
-          <div className="text-wrapper-9">4.5</div>
-        </div>
-
-        <div className="overlap-3">
-          <img
-            className="img"
-            alt="Rectangle"
-            src="/imagesFeedback/rectangle-60.svg"
-          />
-
-          <div className="text-wrapper-10">10 Ba</div>
-        </div>
-
-        <div className="overlap-4">
-          <img
-            className="rectangle-2"
-            alt="Rectangle"
-            src="/imagesFeedback/rectangle-60.svg"
-          />
-
-          <div className="text-wrapper-10">18 s</div>
-        </div>
 
         <div className="too-watery-wrapper">
-          <div className="too-watery">
-            Too <br />
-            Watery
-          </div>
+          <div className="text-wrapper-opensans-common" onClick={() => setSuggestion("Decrease the Extraction Time")}>
+              Too<br />Watery
+            </div>
         </div>
 
         <div className="overlap-5">
@@ -82,10 +91,8 @@ export const Feedback = ({ switchPage }) => {
             alt="Rectangle"
             src="/imagesFeedback/rectangle-62.svg"
           />
-
-          <div className="too-bitter">
-            Too <br />
-            Bitter
+          <div className="text-wrapper-opensans-common" onClick={() => setSuggestion("Adjust the grinder size to 4\nIncrease the bean size")}>
+            Too<br />Bitter
           </div>
         </div>
 
@@ -95,11 +102,8 @@ export const Feedback = ({ switchPage }) => {
             alt="Rectangle"
             src="/imagesFeedback/rectangle-63.svg"
           />
-
-          <div className="none-good">
-            None
-            <br />
-            (Good!)
+          <div className="text-wrapper-opensans-common" onClick={() => setSuggestion("")}>
+            None<br />(Good!)
           </div>
         </div>
 
@@ -112,12 +116,44 @@ export const Feedback = ({ switchPage }) => {
         <div className="text-wrapper-11">Suggestions</div>
 
         <div className="overlap-7">
+          <div className="suggestions">
+            <img
+              alt="Rectangle"
+              src="/imagesFeedback/rectangle-64.svg"
+            />
+            <div className="text-wrapper-opensans-common">{suggestion}</div>
+          </div>
           <img
-            className="rectangle-4"
+            className="rectangle-5"
             alt="Rectangle"
-            src="/imagesFeedback/rectangle-64.svg"
+            src="/imagesFeedback/rectangle-49.svg"
+            onClick={() => switchPage('DrinkSelect')}
+            style={{ cursor: 'pointer' }}
           />
+          <div className="return-to-drink" onClick={() => switchPage('DrinkSelect')} style={{ cursor: 'pointer' }}>
+            Return to<br />Drink Selection
+          </div>
+        </div>
 
+        <div className="frame">
+          <div className="group">
+            <div className="vector-wrapper">
+              <img
+                className="vector"
+                alt="Vector"
+                src="/imagesFeedback/vector.svg"
+              />
+            </div>
+            <div className="img-wrapper">
+              <img
+                className="vector"
+                alt="Vector"
+                src="/imagesFeedback/vector-1.svg"
+              />
+            </div>
+          </div>
+        </div>
+{/* 
           <p className="adjust-the-grinder">
             Adjust the grinder size to 4<br />
             Increase the bean size
@@ -138,7 +174,7 @@ export const Feedback = ({ switchPage }) => {
             <br />
             Drink Selection
           </div>
-        </div>
+        </div> */}
 
         <div className="frame">
           <div className="group">

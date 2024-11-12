@@ -13,7 +13,7 @@
   width: 393px;
 }
 
-.Feedback .text-wrapper {
+.Feedback .text-wrapper-title {
   color: var(--headingh-1);
   font-family: "Playfair", Helvetica;
   font-size: 56px;
@@ -25,6 +25,31 @@
   text-align: center;
   top: 49px;
   width: 278px;
+}
+
+/* Common styles for all text wrappers */
+.text-wrapper-opensans-common {
+  color: #ffffff;
+  font-family: "Open Sans", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  resize: none;
+  overflow: hidden;
 }
 
 .Feedback .text-wrapper-2 {
@@ -104,6 +129,15 @@
   width: 220px;
 }
 
+.Feedback .image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.Feedback .image-container img {
+  display: block;
+}
+
 .Feedback .text-wrapper-7 {
   color: #000000;
   font-family: "Open Sans", Helvetica;
@@ -147,6 +181,7 @@
 }
 
 .Feedback .text-wrapper-9 {
+  background: transparent;
   color: #ffffff;
   font-family: "Open Sans", Helvetica;
   font-size: 20px;
@@ -318,25 +353,13 @@
   width: 342px;
 }
 
-.Feedback .rectangle-4 {
+
+.Feedback .suggestions {
   height: 99px;
   left: 1px;
   position: absolute;
   top: 0;
   width: 341px;
-}
-
-.Feedback .adjust-the-grinder {
-  color: #ffffff;
-  font-family: "Open Sans", Helvetica;
-  font-size: 20px;
-  font-weight: 400;
-  left: 11px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 20px;
-  width: 318px;
 }
 
 .Feedback .rectangle-5 {
@@ -356,6 +379,9 @@
   left: 17px;
   letter-spacing: 0;
   line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   text-align: center;
   top: 120px;
