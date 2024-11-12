@@ -143,7 +143,7 @@
   line-height: normal;
   position: absolute;
   text-align: center;
-  top: -1px;
+  top: 30px;
   width: 131px;
 }
 
@@ -183,7 +183,7 @@
   line-height: normal;
   position: absolute;
   text-align: center;
-  top: 9px;
+  top: -10px;
 }
 
 .Timer .span {
@@ -197,4 +197,18 @@
 .Timer .text-wrapper-4 {
   font-weight: 700;
 }
+.Timer .frame-2 {
+  background-color: #7b8d42;
+  border-radius: 15px;
+  height: 338px;
+  left: 27px;
+  overflow: hidden;
+  position: absolute;
+  top: 343px;
+  width: 338px;
+}
 
+/* Add this class for red background when time is negative */
+.Timer .negative-background {
+  background-color: #ff0000; /* Red background */
+}
