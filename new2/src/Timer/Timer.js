@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./Timer.css";
 
 export const Timer = ({ switchPage }) => {
+  const [time, setTime] = useState(18); // Initial time in seconds (18 seconds)
+  const [isRunning, setIsRunning] = useState(false);
+
+  // Format time as mm:ss
+  const formatTime = (time) => {
+    const minutes = String(Math.floor(Math.abs(time) / 60)).padStart(2, '0');
+    const seconds = String(Math.abs(time) % 60).padStart(2, '0');
+    return `${time < 0 ? "-" : ""}${minutes}:${seconds}`;
+  };
+
+  // Countdown effect
+  useEffect(() => {
+    if (!isRunning) return;
+    const timerInterval = setInterval(() => {
+      setTime((prevTime) => prevTime - 1);
+    }, 1000);
+
+    // Clear interval when component unmounts or timer stops
+    return () => clearInterval(timerInterval);
+  }, [isRunning]);
+
+  // Toggle start/stop
+  const toggleTimer = () => setIsRunning((prev) => !prev);
+
   const navigate = useNavigate();
 
   const handleContinue = () => {
@@ -42,13 +66,18 @@ export const Timer = ({ switchPage }) => {
           </div>
         </div>
 
-        <div className="frame-2">
-          <div className="text-wrapper-2">18:00</div>
+        <div className={`frame-2 ${time < 0 ? "negative-background" : ""}`}>
+          <div className={`coffee-cup ${isRunning ? "running" : ""}`}></div>
+          <div className="text-wrapper-2">
+            {formatTime(time)}
+          </div>
 
           <img
             className="btn"
             alt="Btn"
-            src="/imagesTimer/btn.svg"
+            src={`/imagesTimer/${isRunning ? "btn.svg" : "btn2.svg"}`} // Toggle between play and pause icons
+            onClick={toggleTimer} // Start/stop timer on button click
+            style={{ cursor: 'pointer' }}
           />
         </div>
 
@@ -86,6 +115,5 @@ export const Timer = ({ switchPage }) => {
     </div>
   );
 };
-
 
 export default Timer;

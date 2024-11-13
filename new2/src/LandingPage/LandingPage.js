@@ -53,7 +53,13 @@ export const LandingPage = ({ switchPage }) => {
               src="/imagesLandingPage/rectangle-79.svg"
             />
 
-            <div className="text-wrapper-3">type here</div>
+            <div className="text-wrapper-3">
+              <input
+                className="text-wrapper-3"
+                type="text"
+                placeholder="type here"
+              />
+            </div>
           </div>
 
           <div className="overlap-4">
@@ -107,7 +113,13 @@ export const LandingPage = ({ switchPage }) => {
               src="/imagesLandingPage/rectangle-79.svg"
             />
 
-            <div className="text-wrapper-3">type here</div>
+            <div className="text-wrapper-3">
+              <input
+                className="text-wrapper-3"
+                type="text"
+                placeholder="type here"
+              />
+            </div>
 
             <div className="text-wrapper-2">Select Machine</div>
           </div>

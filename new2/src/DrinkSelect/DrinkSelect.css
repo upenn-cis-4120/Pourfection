@@ -199,13 +199,16 @@
 }
 
 .DrinkSelect .text-wrapper-6 {
+  background-color: transparent;
+  border: none;
+  outline: none;
   color: #000000;
   font-family: "Open Sans", Helvetica;
   font-size: 14px;
   font-weight: 400;
-  left: 102px;
+  left: 100px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 7px;
+  top: 8px;
 }
