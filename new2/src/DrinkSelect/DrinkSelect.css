@@ -48,32 +48,12 @@
   position: relative;
 }
 
-.DrinkSelect .overlap-group {
-  background-color: #b8794b;
-  border-radius: 5px;
-  height: 37px;
+.DrinkSelect .back-button {
   left: 0;
-  position: absolute;
-  top: 0;
-  width: 44px;
 }
 
-.DrinkSelect .vector {
-  height: 18px;
-  left: 11px;
-  position: absolute;
-  top: 9px;
-  width: 22px;
-}
-
-.DrinkSelect .vector-wrapper {
-  background-color: #b8794b;
-  border-radius: 5px;
-  height: 37px;
+.DrinkSelect .menu-button {
   left: 317px;
-  position: absolute;
-  top: 0;
-  width: 44px;
 }
 
 .DrinkSelect .rectangle {

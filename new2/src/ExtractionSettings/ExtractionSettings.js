@@ -1,30 +1,51 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./ExtractionSettings.css";
 
-export const ExtractionSettings = ({ switchPage }) => {
+const ExtractionSettings = () => {
+  const navigate = useNavigate();
+
+  const handleContinue = () => {
+    navigate('/timer');
+  };
+
+  const handleBack = () => {
+    navigate(-1); // Go back to the previous page
+  };
+
+  const handleMenu = () => {
+    navigate('/menu'); // Navigate to the menu page
+  };
+
+  const handleChangeMachine = () => {
+    navigate('/'); // Navigate to the LandingPage
+  };
+
+  const handleChangeGrinder = () => {
+    navigate('/'); // Navigate to the LandingPage
+  };
+
   return (
     <div className="ExtractionSettings">
       <div className="div">
         <div className="overlap">
           <div className="text-wrapper">Extraction Settings</div>
 
-          <div className="frame">
-            <div className="group">
-              <div className="overlap-group">
-                <img
-                  className="vector"
-                  alt="Vector"
-                  src="/imagesExtractionSettings/vector.svg"
-                />
-              </div>
+          <div className="group">
+            <div className="back-button button" onClick={handleBack}>
+              <img
+                className="icon-symbol"
+                alt="Back Arrow"
+                src="/imagesLandingPage/vector.svg"
+              />
+            </div>
 
-              <div className="vector-wrapper">
-                <img
-                  className="vector"
-                  alt="Vector"
-                  src="/imagesExtractionSettings/vector-1.svg"
-                />
-              </div>
+            <div className="menu-button button" onClick={handleMenu}>
+              <img
+                className="icon-symbol"
+                alt="Menu Symbol"
+                src="/imagesLandingPage/vector-1.svg"
+              />
             </div>
           </div>
         </div>
@@ -47,7 +68,6 @@ export const ExtractionSettings = ({ switchPage }) => {
 
         <p className="pressure">
           <span className="span">Pressure</span>
-
           <span className="text-wrapper-7">&nbsp;</span>
         </p>
 
@@ -56,28 +76,27 @@ export const ExtractionSettings = ({ switchPage }) => {
         </div>
 
         <div className="overlap-5"
-        onClick={() => switchPage('LandingPage')}
-        style={{ cursor: 'pointer' }}>
+          onClick={handleChangeMachine}
+          style={{ cursor: 'pointer' }}>
           <div className="text-wrapper-9">Change Machine</div>
         </div>
 
         <div className="overlap-6"
-        onClick={() => switchPage('Timer')}
+          onClick={handleContinue}
           style={{ cursor: 'pointer' }}>
           <img
             className="rectangle"
             alt="Rectangle"
             src="/imagesExtractionSettings/rectangle-49.svg"
           />
-
           <div className="text-wrapper-10">Extract</div>
         </div>
 
         <div className="text-wrapper-11">Extraction Time</div>
 
         <div className="overlap-7"
-        onClick={() => switchPage('LandingPage')}
-        style={{ cursor: 'pointer' }}>
+          onClick={handleChangeGrinder}
+          style={{ cursor: 'pointer' }}>
           <div className="text-wrapper-12">Change Grinder</div>
         </div>
       </div>
@@ -85,4 +104,4 @@ export const ExtractionSettings = ({ switchPage }) => {
   );
 };
 
-export default ExtractionSettings
+export default ExtractionSettings;

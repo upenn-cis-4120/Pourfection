@@ -1,24 +1,34 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Menu.css";
 
-export const Menu = ({ switchPage }) => {
+const Menu = () => {
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate(-1); // Go back to the previous page
+  };
+
+  const handleMenu = () => {
+    navigate(-1); // Navigate back to the previous page to "unmenu"
+  };
+
   return (
     <div className="Menu">
       <div className="div">
         <div className="overlap"
-        onClick={() => switchPage('LandingPage')}
-        style={{ cursor: 'pointer' }}
+          onClick={() => navigate('/')}
+          style={{ cursor: 'pointer' }}
         >
           <div className="rectangle" />
-
           <div className="text-wrapper">Initialization</div>
         </div>
 
         <div className="overlap-group"
-        onClick={() => switchPage('ExtractionSettings')}
-        style={{ cursor: 'pointer' }}>
+          onClick={() => navigate('/extraction-settings')}
+          style={{ cursor: 'pointer' }}
+        >
           <div className="rectangle-2" />
-
           <div className="text-wrapper-2">Calibration</div>
         </div>
 
@@ -27,10 +37,10 @@ export const Menu = ({ switchPage }) => {
         </div>
 
         <div className="overlap-2"
-        onClick={() => switchPage('DrinkSelect')}
-        style={{ cursor: 'pointer' }}>
+          onClick={() => navigate('/drink-select')}
+          style={{ cursor: 'pointer' }}
+        >
           <div className="rectangle-3" />
-
           <div className="text-wrapper-4">Drink Selection</div>
         </div>
 
@@ -51,19 +61,19 @@ export const Menu = ({ switchPage }) => {
 
           <div className="frame">
             <div className="group">
-              <div className="vector-wrapper">
+              <div className="back-button button" onClick={handleBack}>
                 <img
-                  className="vector"
-                  alt="Vector"
-                  src="/imagesMenu/vector.svg"
+                  className="icon-symbol"
+                  alt="Back Arrow"
+                  src="/imagesLandingPage/vector.svg"
                 />
               </div>
 
-              <div className="img-wrapper">
+              <div className="menu-button button" onClick={handleMenu}>
                 <img
-                  className="vector"
-                  alt="Vector"
-                  src="/imagesMenu/vector-1.svg"
+                  className="icon-symbol"
+                  alt="Menu Symbol"
+                  src="/imagesLandingPage/vector-1.svg"
                 />
               </div>
             </div>
@@ -74,4 +84,4 @@ export const Menu = ({ switchPage }) => {
   );
 };
 
-export default Menu
+export default Menu;

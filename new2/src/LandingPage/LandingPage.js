@@ -1,8 +1,23 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
 
 
 export const LandingPage = ({ switchPage }) => {
+  const navigate = useNavigate();
+
+  const handleContinue = () => {
+    navigate('/drink-select');
+  };
+
+  const handleBack = () => {
+    navigate(-1); // Go back to the previous page
+  };
+
+  const handleMenu = () => {
+    navigate('/menu'); // Navigate to the menu page
+  };
+
   return (
     <div className="LandingPage">
       <div className="div">
@@ -10,18 +25,18 @@ export const LandingPage = ({ switchPage }) => {
           <div className="text-wrapper">Pourfection</div>
 
           <div className="group">
-            <div className="overlap-group">
+            <div className="back-button button" onClick={handleBack}>
               <img
-                className="vector"
-                alt="Vector"
+                className="icon-symbol"
+                alt="Back Arrow"
                 src="/imagesLandingPage/vector.svg"
               />
             </div>
 
-            <div className="vector-wrapper">
+            <div className="menu-button button" onClick={handleMenu}>
               <img
-                className="vector"
-                alt="Vector"
+                className="icon-symbol"
+                alt="Menu Symbol"
                 src="/imagesLandingPage/vector-1.svg"
               />
             </div>
@@ -112,7 +127,7 @@ export const LandingPage = ({ switchPage }) => {
           />
 
           <div className="continue-to-drink"
-          onClick={() => switchPage('DrinkSelect')}
+          onClick={handleContinue}
           style={{ cursor: 'pointer' }}
           >
             Continue to

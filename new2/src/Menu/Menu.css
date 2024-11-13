@@ -216,31 +216,11 @@
   position: relative;
 }
 
-.Menu .vector-wrapper {
-  background-color: #b8794b;
-  border-radius: 5px;
-  height: 37px;
+.Menu .back-button {
   left: 0;
-  position: absolute;
-  top: 0;
-  width: 44px;
 }
 
-.Menu .vector {
-  height: 18px;
-  left: 11px;
-  position: absolute;
-  top: 9px;
-  width: 22px;
-}
-
-.Menu .img-wrapper {
-  background-color: #b8794b;
-  border-radius: 5px;
-  height: 37px;
+.Menu .menu-button {
   left: 317px;
-  position: absolute;
-  top: 0;
-  width: 44px;
 }
 

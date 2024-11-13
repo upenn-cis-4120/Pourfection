@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Common button styles */
+.button {
+  background-color: #b8794b;
+  border-radius: 5px;
+  height: 37px;
+  position: absolute;
+  top: 0;
+  width: 44px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.icon-symbol {
+  height: 18px;
+  left: 11px;
+  position: absolute;
+  top: 9px;
+  width: 22px;
+}

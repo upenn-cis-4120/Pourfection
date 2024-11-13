@@ -1,8 +1,22 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Feedback.css";
 
 export const Feedback = ({ switchPage }) => {
   const [suggestion, setSuggestion] = useState("");
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate(-1); // Go back to the previous page
+  };
+
+  const handleMenu = () => {
+    navigate('/menu'); // Assuming '/menu' is the route for the menu page
+  };
+
+  const handleDrink = () => {
+    navigate('/drink-select'); 
+  }
 
   return (
     <div className="Feedback">
@@ -130,67 +144,26 @@ export const Feedback = ({ switchPage }) => {
             onClick={() => switchPage('DrinkSelect')}
             style={{ cursor: 'pointer' }}
           />
-          <div className="return-to-drink" onClick={() => switchPage('DrinkSelect')} style={{ cursor: 'pointer' }}>
+          <div className="return-to-drink" onClick={handleDrink} style={{ cursor: 'pointer' }}>
             Return to<br />Drink Selection
           </div>
         </div>
 
         <div className="frame">
           <div className="group">
-            <div className="vector-wrapper">
+            <div className="back-button button" onClick={handleBack}>
               <img
-                className="vector"
-                alt="Vector"
-                src="/imagesFeedback/vector.svg"
-              />
-            </div>
-            <div className="img-wrapper">
-              <img
-                className="vector"
-                alt="Vector"
-                src="/imagesFeedback/vector-1.svg"
-              />
-            </div>
-          </div>
-        </div>
-{/* 
-          <p className="adjust-the-grinder">
-            Adjust the grinder size to 4<br />
-            Increase the bean size
-          </p>
-
-          <img
-            className="rectangle-5"
-            alt="Rectangle"
-            src="/imagesFeedback/rectangle-49.svg"
-            onClick={() => switchPage('DrinkSelect')}
-          style={{ cursor: 'pointer' }}
-          />
-
-          <div className="return-to-drink"
-          onClick={() => switchPage('DrinkSelect')}
-          style={{ cursor: 'pointer' }}>
-            Return to
-            <br />
-            Drink Selection
-          </div>
-        </div> */}
-
-        <div className="frame">
-          <div className="group">
-            <div className="vector-wrapper">
-              <img
-                className="vector"
-                alt="Vector"
-                src="/imagesFeedback/vector.svg"
+                className="icon-symbol"
+                alt="Back Arrow"
+                src="/imagesLandingPage/vector.svg"
               />
             </div>
 
-            <div className="img-wrapper">
+            <div className="menu-button button" onClick={handleMenu}>
               <img
-                className="vector"
-                alt="Vector"
-                src="/imagesFeedback/vector-1.svg"
+                className="icon-symbol"
+                alt="Menu Symbol"
+                src="/imagesLandingPage/vector-1.svg"
               />
             </div>
           </div>

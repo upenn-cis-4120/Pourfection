@@ -1,30 +1,43 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import "./Timer.css";
 
 export const Timer = ({ switchPage }) => {
+  const navigate = useNavigate();
+
+  const handleContinue = () => {
+    navigate('/feedback');
+  };
+
+  const handleBack = () => {
+    navigate(-1); // Go back to the previous page
+  };
+
+  const handleMenu = () => {
+    navigate('/menu'); // Navigate to the menu page
+  };
+
   return (
     <div className="Timer">
       <div className="div">
         <div className="overlap">
           <div className="text-wrapper">Extraction Timer</div>
 
-          <div className="frame">
-            <div className="group">
-              <div className="overlap-group">
-                <img
-                  className="vector"
-                  alt="Vector"
-                  src="/imagesTimer/vector.svg"
-                />
-              </div>
+          <div className="group">
+            <div className="back-button button" onClick={handleBack}>
+              <img
+                className="icon-symbol"
+                alt="Back Arrow"
+                src="/imagesLandingPage/vector.svg"
+              />
+            </div>
 
-              <div className="vector-wrapper">
-                <img
-                  className="vector"
-                  alt="Vector"
-                  src="/imagesTimer/vector-1.svg"
-                />
-              </div>
+            <div className="menu-button button" onClick={handleMenu}>
+              <img
+                className="icon-symbol"
+                alt="Menu Symbol"
+                src="/imagesLandingPage/vector-1.svg"
+              />
             </div>
           </div>
         </div>
@@ -41,7 +54,7 @@ export const Timer = ({ switchPage }) => {
 
         <div className="frame-wrapper">
           <div className="frame-3"
-          onClick={() => switchPage('Feedback')}
+          onClick={handleContinue}
           style={{ cursor: 'pointer' }}>
             <div className="text-wrapper-3">Done</div>
 
