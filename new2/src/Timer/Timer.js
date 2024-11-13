@@ -54,7 +54,10 @@ export const Timer = ({ switchPage }) => {
         </div>
 
         <div className={`frame-2 ${time < 0 ? "negative-background" : ""}`}>
-          <div className="text-wrapper-2">{formatTime(time)}</div>
+          <div className={`coffee-cup ${isRunning ? "running" : ""}`}></div>
+          <div className="text-wrapper-2">
+            {formatTime(time)}
+          </div>
 
           <img
             className="btn"

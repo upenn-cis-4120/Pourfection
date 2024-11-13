@@ -88,17 +88,17 @@
 }
 
 .Timer .text-wrapper-2 {
-  color: #f5f0e1;
+  color: #b8794b;
   font-family: "Open Sans", Helvetica;
   font-size: 86px;
-  font-weight: 300;
+  font-weight: 500;
   height: 100px;
   left: 38px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
   text-align: center;
-  top: 118px;
+  top: 8px;
   white-space: nowrap;
   width: 262px;
 }
@@ -206,6 +206,32 @@
   position: absolute;
   top: 343px;
   width: 338px;
+}
+
+.coffee-cup {
+  width: 100%; /* Adjust as needed */
+  height: 100%; /* Adjust as needed */
+  background-image: url('./../../public/imagesTimer/coffee-jpg-cis4120.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.coffee-cup.running {
+  width: 100%; /* Adjust as needed */
+  height: 100%; /* Adjust as needed */
+  animation-play-state: running; /* Play animation when isRunning is true */
+  background-image: url('./../../public/imagesTimer/coffee-gif-cis4120.gif');
+
+}
+
+/* Define the fill animation */
+@keyframes fill-animation {
+  from {
+    background-position: top; /* Start from the bottom of the cup */
+  }
+  to {
+    background-position: bottom; /* Fill to the top */
+  }
 }
 
 /* Add this class for red background when time is negative */
