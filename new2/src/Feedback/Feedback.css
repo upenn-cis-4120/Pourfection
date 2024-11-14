@@ -454,6 +454,19 @@
   justify-content: center;
 }
 
+.Feedback .subtext {
+  color: #000000;
+  font-family: "Open Sans", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  left: 3px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 130px; /* Adjust as needed to position below the title */
+  width: 100%;
+}
 
 .Feedback .editable-input {
   background: none;

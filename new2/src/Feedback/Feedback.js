@@ -22,6 +22,7 @@ export const Feedback = ({ switchPage }) => {
     <div className="Feedback">
       <div className="div">
         <div className="text-wrapper-title">Feedback</div>
+        <div className="subtext">Based on your chosen settings, any feedback?</div>
 
         <div className="text-wrapper-2">Weight used:</div>
         <div className="overlap-group">
