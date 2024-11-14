@@ -289,3 +289,25 @@
   top: 17px;
 }
 
+.ExtractionSettings .dot-indicators {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60px; /* Adjust width as needed to space the dots */
+  position: absolute;
+  left: 50%; /* Center within the group */
+  transform: translateX(-50%);
+  top: 8px; /* Align with back and menu buttons */
+}
+
+.ExtractionSettings .dot {
+  width: 8px; /* Size of each dot */
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid #000000; /* Outline color */
+  background-color: transparent; /* Empty dots */
+}
+
+.ExtractionSettings .dot.filled {
+  background-color: #000000; /* Filled color for active dot */
+}

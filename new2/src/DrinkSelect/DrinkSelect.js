@@ -32,6 +32,14 @@ export const DrinkSelect = ({ switchPage }) => {
               />
             </div>
 
+            <div className="dot-indicators">
+              <div className="dot"></div>
+              <div className="dot filled"></div>
+              <div className="dot"></div>
+              <div className="dot"></div>
+              <div className="dot"></div>
+            </div>
+
             <div className="menu-button button" onClick={handleMenu}>
               <img
                 className="icon-symbol"
