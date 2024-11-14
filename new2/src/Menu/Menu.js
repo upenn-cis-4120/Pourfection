@@ -9,10 +9,6 @@ const Menu = () => {
     navigate(-1); // Go back to the previous page
   };
 
-  const handleMenu = () => {
-    navigate(-1); // Navigate back to the previous page to "unmenu"
-  };
-
   return (
     <div className="Menu">
       <div className="div">
@@ -66,14 +62,6 @@ const Menu = () => {
                   className="icon-symbol"
                   alt="Back Arrow"
                   src="/imagesLandingPage/vector.svg"
-                />
-              </div>
-
-              <div className="menu-button button" onClick={handleMenu}>
-                <img
-                  className="icon-symbol"
-                  alt="Menu Symbol"
-                  src="/imagesLandingPage/vector-1.svg"
                 />
               </div>
             </div>
