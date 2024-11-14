@@ -41,6 +41,27 @@ export const Timer = ({ switchPage }) => {
     navigate('/menu'); // Navigate to the menu page
   };
 
+
+  const handleInitialization = () => {
+    navigate('/'); 
+  }
+
+  const handleDrink = () => {
+    navigate('/drink-select'); 
+  }
+
+  const handleExtrSettings = () => {
+    navigate('/extraction-settings'); 
+  }
+
+  const handleTimer = () => {
+    navigate('/timer'); 
+  }
+
+  const handleFeedback = () => {
+    navigate('/feedback'); 
+  }
+
   return (
     <div className="Timer">
       <div className="div">
@@ -57,11 +78,11 @@ export const Timer = ({ switchPage }) => {
             </div>
 
             <div className="dot-indicators">
-              <div className="dot"></div>
-              <div className="dot"></div>
-              <div className="dot"></div>
-              <div className="dot filled"></div>
-              <div className="dot"></div>
+              <div className="dot" data-tooltip="Initialization" onClick={handleInitialization}></div>
+              <div className="dot" data-tooltip="Drink Selection" onClick={handleDrink}></div>
+              <div className="dot" data-tooltip="Extraction Settings" onClick={handleExtrSettings}></div>
+              <div className="dot filled" data-tooltip="Extraction Timer" onClick={handleTimer}></div>
+              <div className="dot" data-tooltip="Feedback" onClick={handleFeedback}></div>
             </div>
 
             <div className="menu-button button" onClick={handleMenu}>

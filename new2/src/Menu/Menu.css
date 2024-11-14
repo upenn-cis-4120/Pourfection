@@ -223,26 +223,3 @@
 .Menu .menu-button {
   left: 317px;
 }
-
-.Menu .dot-indicators {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 60px; /* Adjust width as needed to space the dots */
-  position: absolute;
-  left: 50%; /* Center within the group */
-  transform: translateX(-50%);
-  top: 8px; /* Align with back and menu buttons */
-}
-
-.Menu .dot {
-  width: 8px; /* Size of each dot */
-  height: 8px;
-  border-radius: 50%;
-  border: 2px solid #000000; /* Outline color */
-  background-color: transparent; /* Empty dots */
-}
-
-.Menu .dot.filled {
-  background-color: #000000; /* Filled color for active dot */
-}

@@ -9,6 +9,26 @@ const Menu = () => {
     navigate(-1); // Go back to the previous page
   };
 
+  const handleInitialization = () => {
+    navigate('/'); 
+  }
+
+  const handleDrink = () => {
+    navigate('/drink-select'); 
+  }
+
+  const handleExtrSettings = () => {
+    navigate('/extraction-settings'); 
+  }
+
+  const handleTimer = () => {
+    navigate('/timer'); 
+  }
+
+  const handleFeedback = () => {
+    navigate('/feedback'); 
+  }
+
   return (
     <div className="Menu">
       <div className="div">
@@ -65,13 +85,13 @@ const Menu = () => {
                 />
               </div>
 
-              <div className="dot-indicators">
-                <div className="dot"></div>
-                <div className="dot"></div>
-                <div className="dot"></div>
-                <div className="dot"></div>
-                <div className="dot"></div>
-              </div>
+            <div className="dot-indicators">
+              <div className="dot" data-tooltip="Initialization" onClick={handleInitialization}></div>
+              <div className="dot" data-tooltip="Drink Selection" onClick={handleDrink}></div>
+              <div className="dot" data-tooltip="Extraction Settings" onClick={handleExtrSettings}></div>
+              <div className="dot" data-tooltip="Extraction Timer" onClick={handleTimer}></div>
+              <div className="dot" data-tooltip="Feedback" onClick={handleFeedback}></div>
+            </div>
 
             </div>
           </div>

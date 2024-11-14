@@ -17,13 +17,25 @@ const ExtractionSettings = () => {
     navigate('/menu'); // Navigate to the menu page
   };
 
-  const handleChangeMachine = () => {
-    navigate('/'); // Navigate to the LandingPage
-  };
+  const handleInitialization = () => {
+    navigate('/'); 
+  }
 
-  const handleChangeGrinder = () => {
-    navigate('/'); // Navigate to the LandingPage
-  };
+  const handleDrink = () => {
+    navigate('/drink-select'); 
+  }
+
+  const handleExtrSettings = () => {
+    navigate('/extraction-settings'); 
+  }
+
+  const handleTimer = () => {
+    navigate('/timer'); 
+  }
+
+  const handleFeedback = () => {
+    navigate('/feedback'); 
+  }
 
   return (
     <div className="ExtractionSettings">
@@ -42,11 +54,11 @@ const ExtractionSettings = () => {
             </div>
 
             <div className="dot-indicators">
-              <div className="dot"></div>
-              <div className="dot"></div>
-              <div className="dot filled"></div>
-              <div className="dot"></div>
-              <div className="dot"></div>
+              <div className="dot" data-tooltip="Initialization" onClick={handleInitialization}></div>
+              <div className="dot" data-tooltip="Drink Selection" onClick={handleDrink}></div>
+              <div className="dot filled" data-tooltip="Extraction Settings" onClick={handleExtrSettings}></div>
+              <div className="dot" data-tooltip="Extraction Timer" onClick={handleTimer}></div>
+              <div className="dot" data-tooltip="Feedback" onClick={handleFeedback}></div>
             </div>
 
             <div className="menu-button button" onClick={handleMenu}>
@@ -85,7 +97,7 @@ const ExtractionSettings = () => {
         </div>
 
         <div className="overlap-5"
-          onClick={handleChangeMachine}
+          onClick={handleInitialization}
           style={{ cursor: 'pointer' }}>
           <div className="text-wrapper-9">Change Machine</div>
         </div>
@@ -104,7 +116,7 @@ const ExtractionSettings = () => {
         <div className="text-wrapper-11">Extraction Time</div>
 
         <div className="overlap-7"
-          onClick={handleChangeGrinder}
+          onClick={handleInitialization}
           style={{ cursor: 'pointer' }}>
           <div className="text-wrapper-12">Change Grinder</div>
         </div>
