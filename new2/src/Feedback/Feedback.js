@@ -30,11 +30,13 @@ export const Feedback = ({ switchPage }) => {
               alt="Rectangle"
               src="/imagesFeedback/rectangle-60.svg"
             />
-            <input
-              type="text"
-              className="text-wrapper-opensans-common"
-              defaultValue="8g"
-            />
+            <div className="editable-input-container">
+              <input
+                  type="text"
+                  className="editable-input"
+                  defaultValue="8g"
+              />
+            </div>
         </div>
 
         <div className="text-wrapper-3">Grind size:</div>
@@ -44,11 +46,13 @@ export const Feedback = ({ switchPage }) => {
             alt="Rectangle"
             src="/imagesFeedback/rectangle-60.svg"
           />
-          <input
-            type="text"
-            className="text-wrapper-opensans-common"
-            defaultValue="4.5"
-          />
+          <div className="editable-input-container">
+            <input
+              type="text"
+              className="editable-input"
+              defaultValue="4.5"
+            />
+          </div>
         </div>
 
         <div className="text-wrapper-4">Pressure:</div>
@@ -58,11 +62,13 @@ export const Feedback = ({ switchPage }) => {
             alt="Rectangle"
             src="/imagesFeedback/rectangle-60.svg"
           />
-          <input
-            type="text"
-            className="text-wrapper-opensans-common"
-            defaultValue="9 bars"
-          />
+          <div className="editable-input-container">
+            <input
+              type="text"
+              className="editable-input"
+              defaultValue="9 bars"
+            />
+          </div>
         </div>
 
         <div className="text-wrapper-5">Extraction Time:</div>
@@ -72,11 +78,13 @@ export const Feedback = ({ switchPage }) => {
             alt="Rectangle"
             src="/imagesFeedback/rectangle-60.svg"
           />
-          <input
-            type="text"
-            className="text-wrapper-opensans-common"
-            defaultValue="18s"
-          />
+          <div className="editable-input-container">
+            <input
+              type="text"
+              className="editable-input"
+              defaultValue="18s"
+            />
+          </div>
         </div>
 
         <div className="text-wrapper-6">Common Problems?</div>
