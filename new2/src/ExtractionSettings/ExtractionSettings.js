@@ -30,6 +30,7 @@ const ExtractionSettings = () => {
       <div className="div">
         <div className="overlap">
           <div className="text-wrapper">Extraction Settings</div>
+          <div className="subtext">Based on your machine/drink, we recommend:</div>
 
           <div className="group">
             <div className="back-button button" onClick={handleBack}>
