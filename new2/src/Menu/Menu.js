@@ -64,6 +64,15 @@ const Menu = () => {
                   src="/imagesLandingPage/vector.svg"
                 />
               </div>
+
+              <div className="dot-indicators">
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+              </div>
+
             </div>
           </div>
         </div>
