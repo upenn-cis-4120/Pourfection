@@ -52,6 +52,10 @@
   overflow: hidden;
 }
 
+.text-wrapper-opensans-common:hover {
+  color: #000000; /* Hover color for inactive dots */
+}
+
 .Feedback .text-wrapper-2 {
   color: #000000;
   font-family: "Open Sans", Helvetica;
@@ -370,7 +374,7 @@
   width: 338px;
 }
 
-.Feedback .return-to-drink {
+.Feedback .submit-feedback-wrapper {
   color: #ffffff;
   font-family: "Open Sans", Helvetica;
   font-size: 32px;
@@ -459,4 +463,50 @@
   margin: 0;
   appearance: textfield; /* Remove number input arrows in some browsers */
   border-bottom: 2px solid #8c5a3e; /* Underline color */
+}
+
+.Feedback .feedback-input-container {
+  position: relative;
+  height: 90px;
+  width: 330px;
+  background-color: #f0e6cc; /* Light background to indicate editability */
+  border-radius: 8px;
+  border: 1px solid #8c5a3e; /* Distinct border color */
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Feedback .popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #d5c3a1; /* Background brown */
+  border: 2px solid #8c5a3e; /* Darker brown outline */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 300px;
+  padding: 20px;
+}
+
+.Feedback .popup-content {
+  position: relative;
+}
+
+.Feedback .popup .close {
+  position: absolute;
+  top: -30px;
+  right: -10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #8c5a3e; /* Darker brown color for the close button */
+}
+
+/* TODO: This is ugly, until we get rid of the svgs and make customizable pieces */
+.too-watery-wrapper.selected,
+.overlap-5.selected {
+  border: 2px solid #000;
 }

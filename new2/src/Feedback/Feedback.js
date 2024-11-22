@@ -4,11 +4,19 @@ import "./Feedback.css";
 
 export const Feedback = ({ switchPage }) => {
   const [suggestion, setSuggestion] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupContent, setPopupContent] = useState("");
+  const [isTooBitterSelected, setIsTooBitterSelected] = useState(false);
+  const [isTooWaterySelected, setIsTooWaterySelected] = useState(false);
   const navigate = useNavigate();
 
   const handleBack = () => {
     navigate(-1); // Go back to the previous page
   };
+
+  const handleDrink = () => {
+    navigate('/drink-select');
+  }
 
   const handleMenu = () => {
     navigate('/menu'); // Assuming '/menu' is the route for the menu page
@@ -16,10 +24,6 @@ export const Feedback = ({ switchPage }) => {
 
   const handleInitialization = () => {
     navigate('/'); 
-  }
-
-  const handleDrink = () => {
-    navigate('/drink-select'); 
   }
 
   const handleExtrSettings = () => {
@@ -34,6 +38,31 @@ export const Feedback = ({ switchPage }) => {
     navigate('/feedback'); 
   }
 
+  const handlePopup = (content) => {
+    setPopupContent(content);
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+    setPopupContent("");
+  };
+
+  const handleSubmitFeedback = () => {
+    // Handle feedback submission logic here
+    console.log("Feedback submitted:", suggestion);
+    navigate('/drink-select'); 
+  };
+
+  const toggleTooBitter = () => {
+    setIsTooBitterSelected(!isTooBitterSelected);
+    handlePopup("Adjust the grinder size to 4\nIncrease the bean size");
+  };
+
+  const toggleTooWatery = () => {
+    setIsTooWaterySelected(!isTooWaterySelected);
+    handlePopup("Decrease the Extraction Time");
+  };
 
   return (
     <div className="Feedback">
@@ -43,18 +72,18 @@ export const Feedback = ({ switchPage }) => {
 
         <div className="text-wrapper-2">Weight used:</div>
         <div className="overlap-group">
-            <img
-              className="img"
-              alt="Rectangle"
-              src="/imagesFeedback/rectangle-60.svg"
+          <img
+            className="img"
+            alt="Rectangle"
+            src="/imagesFeedback/rectangle-60.svg"
+          />
+          <div className="editable-input-container">
+            <input
+              type="text"
+              className="editable-input"
+              defaultValue="8g"
             />
-            <div className="editable-input-container">
-              <input
-                  type="text"
-                  className="editable-input"
-                  defaultValue="8g"
-              />
-            </div>
+          </div>
         </div>
 
         <div className="text-wrapper-3">Grind size:</div>
@@ -118,20 +147,19 @@ export const Feedback = ({ switchPage }) => {
           <div className="text-wrapper-8">type here</div>
         </div>
 
-
-        <div className="too-watery-wrapper">
-          <div className="text-wrapper-opensans-common" onClick={() => setSuggestion("Decrease the Extraction Time")}>
-              Too<br />Watery
-            </div>
+        <div className={`too-watery-wrapper ${isTooWaterySelected ? "selected" : ""}`} onClick={toggleTooWatery}>
+          <div className="text-wrapper-opensans-common">
+            Too<br />Watery
+          </div>
         </div>
 
-        <div className="overlap-5">
+        <div className={`overlap-5 ${isTooBitterSelected ? "selected" : ""}`} onClick={toggleTooBitter}>
           <img
             className="rectangle-3"
             alt="Rectangle"
             src="/imagesFeedback/rectangle-62.svg"
           />
-          <div className="text-wrapper-opensans-common" onClick={() => setSuggestion("Adjust the grinder size to 4\nIncrease the bean size")}>
+          <div className="text-wrapper-opensans-common">
             Too<br />Bitter
           </div>
         </div>
@@ -142,7 +170,7 @@ export const Feedback = ({ switchPage }) => {
             alt="Rectangle"
             src="/imagesFeedback/rectangle-63.svg"
           />
-          <div className="text-wrapper-opensans-common" onClick={() => setSuggestion("")}>
+          <div className="text-wrapper-opensans-common" onClick={() => handlePopup("Great Job!")}>
             None<br />(Good!)
           </div>
         </div>
@@ -153,16 +181,15 @@ export const Feedback = ({ switchPage }) => {
           src="/imagesFeedback/line-2.svg"
         />
 
-        <div className="text-wrapper-11">Suggestions</div>
+        <div className="text-wrapper-11">Feedback</div>
 
         <div className="overlap-7">
-          <div className="suggestions">
-            <img
-              alt="Rectangle"
-              src="/imagesFeedback/rectangle-64.svg"
-            />
-            <div className="text-wrapper-opensans-common">{suggestion}</div>
-          </div>
+          <textarea
+            className="feedback-input-container"
+            placeholder="Enter your feedback here..."
+            value={suggestion}
+            onChange={(e) => setSuggestion(e.target.value)}
+          />
           <img
             className="rectangle-5"
             alt="Rectangle"
@@ -170,8 +197,8 @@ export const Feedback = ({ switchPage }) => {
             onClick={() => switchPage('DrinkSelect')}
             style={{ cursor: 'pointer' }}
           />
-          <div className="return-to-drink" onClick={handleDrink} style={{ cursor: 'pointer' }}>
-            Return to<br />Drink Selection
+          <div className="submit-feedback-wrapper" onClick={handleSubmitFeedback} style={{ cursor: 'pointer' }}>
+            Submit Feedback
           </div>
         </div>
 
@@ -208,9 +235,18 @@ export const Feedback = ({ switchPage }) => {
           alt="Line"
           src="/imagesFeedback/line-2.svg"
         />
+
+        {showPopup && (
+          <div className="popup" onClick={closePopup}>
+            <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+              <span className="close" onClick={closePopup}>&times;</span>
+              <p>{popupContent}</p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default Feedback
+export default Feedback;
