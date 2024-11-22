@@ -4,6 +4,12 @@ import "./Feedback.css";
 
 export const Feedback = ({ switchPage }) => {
   const [suggestion, setSuggestion] = useState("");
+  const [smoothness, setSmoothness] = useState(0);
+  const [strength, setStrength] = useState(0);
+  const [aroma, setAroma] = useState(0);
+  const [temperature, setTemperature] = useState(0);
+  const [acidity, setAcidity] = useState(0);
+  const [overallEnjoyment, setOverallEnjoyment] = useState(0);
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -105,63 +111,94 @@ export const Feedback = ({ switchPage }) => {
           </div>
         </div>
 
-        <div className="text-wrapper-6">Common Problems?</div>
-
-        <div className="overlap">
-          <img
-            className="rectangle"
-            alt="Rectangle"
-            src="/imagesFeedback/rectangle-52.svg"
-          />
-
-          <div className="text-wrapper-7">Other:</div>
-          <div className="text-wrapper-8">type here</div>
-        </div>
-
-
-        <div className="too-watery-wrapper">
-          <div className="text-wrapper-opensans-common" onClick={() => setSuggestion("Decrease the Extraction Time")}>
-              Too<br />Watery
-            </div>
-        </div>
-
-        <div className="overlap-5">
-          <img
-            className="rectangle-3"
-            alt="Rectangle"
-            src="/imagesFeedback/rectangle-62.svg"
-          />
-          <div className="text-wrapper-opensans-common" onClick={() => setSuggestion("Adjust the grinder size to 4\nIncrease the bean size")}>
-            Too<br />Bitter
-          </div>
-        </div>
-
-        <div className="overlap-6">
-          <img
-            className="rectangle-3"
-            alt="Rectangle"
-            src="/imagesFeedback/rectangle-63.svg"
-          />
-          <div className="text-wrapper-opensans-common" onClick={() => setSuggestion("")}>
-            None<br />(Good!)
-          </div>
-        </div>
-
-        <img
-          className="line"
-          alt="Line"
-          src="/imagesFeedback/line-2.svg"
-        />
-
-        <div className="text-wrapper-11">Suggestions</div>
+        <div className="text-wrapper-6">Questionnaire</div>
 
         <div className="overlap-7">
           <div className="suggestions">
-            <img
-              alt="Rectangle"
-              src="/imagesFeedback/rectangle-64.svg"
-            />
-            <div className="text-wrapper-opensans-common">{suggestion}</div>
+            <div className="question">
+              <div className="question-title">Smoothness</div>
+              <div className="scale">
+                {[1,2,3,4,5].map((value) => (
+                    <span
+                        key={`smoothness-${value}`}
+                        className={`dot ${smoothness >= value ? 'filled' : ''}`}
+                        onClick={() => setSmoothness(value)}
+                    ></span>
+                ))}
+              </div>
+            </div>
+
+            {/* Strength/Intensity */}
+            <div className="question">
+              <div className="question-title">Strength/Intensity</div>
+              <div className="scale">
+                {[1,2,3,4,5].map((value) => (
+                    <span
+                        key={`strength-${value}`}
+                        className={`dot ${strength >= value ? 'filled' : ''}`}
+                        onClick={() => setStrength(value)}
+                    ></span>
+                ))}
+              </div>
+            </div>
+
+            {/* Aroma and Flavor Clarity */}
+            <div className="question">
+              <div className="question-title">Aroma</div>
+              <div className="scale">
+                {[1,2,3,4,5].map((value) => (
+                    <span
+                        key={`aroma-${value}`}
+                        className={`dot ${aroma >= value ? 'filled' : ''}`}
+                        onClick={() => setAroma(value)}
+                    ></span>
+                ))}
+              </div>
+            </div>
+
+            {/* Temperature */}
+            <div className="question">
+              <div className="question-title">Temperature</div>
+              <div className="scale">
+                {[1,2,3,4,5].map((value) => (
+                    <span
+                        key={`temperature-${value}`}
+                        className={`dot ${temperature >= value ? 'filled' : ''}`}
+                        onClick={() => setTemperature(value)}
+                    ></span>
+                ))}
+              </div>
+
+            </div>
+
+            {/* Acidity */}
+            <div className="question">
+              <div className="question-title">Acidity</div>
+              <div className="scale">
+                {[1,2,3,4,5].map((value) => (
+                    <span
+                        key={`acidity-${value}`}
+                        className={`dot ${acidity >= value ? 'filled' : ''}`}
+                        onClick={() => setAcidity(value)}
+                    ></span>
+                ))}
+              </div>
+            </div>
+
+            {/* Overall Enjoyment */}
+            <div className="question">
+              <div className="question-title">Overall Enjoyment</div>
+              <div className="scale">
+                {[1,2,3,4,5].map((value) => (
+                    <span
+                        key={`overall-${value}`}
+                        className={`dot ${overallEnjoyment >= value ? 'filled' : ''}`}
+                        onClick={() => setOverallEnjoyment(value)}
+                    ></span>
+                ))}
+              </div>
+            </div>
+
           </div>
           <img
             className="rectangle-5"
@@ -173,6 +210,7 @@ export const Feedback = ({ switchPage }) => {
           <div className="return-to-drink" onClick={handleDrink} style={{ cursor: 'pointer' }}>
             Return to<br />Drink Selection
           </div>
+
         </div>
 
         <div className="frame">
