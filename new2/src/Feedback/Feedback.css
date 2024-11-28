@@ -103,8 +103,8 @@
 .Feedback .text-wrapper-6 {
   color: var(--headingh-1);
   font-family: "Open Sans", Helvetica;
-  font-size: 28px;
-  font-weight: 400;
+  font-size: 24px;
+  font-weight: 500;
   left: 35px;
   letter-spacing: 0;
   line-height: normal;
@@ -346,10 +346,10 @@
 }
 
 .Feedback .overlap-7 {
-  height: 230px;
+  height: 530px;
   left: 30px;
   position: absolute;
-  top: 594px;
+  top: 398px;
   width: 342px;
 }
 
@@ -366,11 +366,11 @@
   height: 99px;
   left: 0;
   position: absolute;
-  top: 121px;
+  top: 325px;
   width: 338px;
 }
 
-.Feedback .return-to-drink {
+.Feedback .submit-feedback-wrapper {
   color: #ffffff;
   font-family: "Open Sans", Helvetica;
   font-size: 32px;
@@ -384,7 +384,7 @@
   align-items: center;
   position: absolute;
   text-align: center;
-  top: 120px;
+  top: 325px;
   width: 311px;
 }
 
@@ -459,4 +459,116 @@
   margin: 0;
   appearance: textfield; /* Remove number input arrows in some browsers */
   border-bottom: 2px solid #8c5a3e; /* Underline color */
+}
+
+/* Question Section */
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+  background-color: #f0e6cc;
+  border: 2px solid #8c5a3e; /* Use the existing color palette */
+  border-radius: 8px;
+  padding: 4px 4px 5px 4px;
+}
+
+.question-title {
+  color: var(--headingh-1);
+  font-family: "Open Sans", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+  margin-left: 0px;
+}
+
+.question-prompt {
+  color: #000000;
+  font-family: "Open Sans", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+  margin-left: 35px;
+  margin-top: 5px;
+  margin-right: 35px;
+}
+
+.scale {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.scale .dot {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #8c5a3e; /* Use the existing color palette */
+  border-radius: 40%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.scale .dot.filled {
+  background-color: #8c5a3e; /* Use the existing color palette */
+}
+.scale .dot::after {
+  content: none;
+}
+
+.scale-labels {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 35px;
+  font-family: "Open Sans", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.scale-labels span {
+  color: #000000;
+  width: 45%; /* Adjust width to prevent text overflow */
+}
+
+.Feedback .feedback-input-container {
+  position: relative;
+  top: 4px;
+  height: 90px;
+  width: 330px;
+  font: 16px 'Open Sans', sans-serif;
+  padding: 3px;
+  background-color: #f0e6cc; /* Light background to indicate editability */
+  border-radius: 8px;
+  border: 2px solid #8c5a3e; /* Distinct border color */
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Feedback .popup {
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #d5c3a1; /* Background brown */
+  border: 2px solid #8c5a3e; /* Darker brown outline */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 300px;
+  padding: 20px;
+}
+
+.Feedback .popup-content {
+  position: relative;
+}
+
+.Feedback .popup .close {
+  position: absolute;
+  top: -30px;
+  right: -10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #8c5a3e; /* Darker brown color for the close button */
 }
