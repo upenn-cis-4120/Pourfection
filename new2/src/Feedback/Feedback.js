@@ -10,7 +10,7 @@ export const Feedback = ({ switchPage }) => {
   const [strength, setStrength] = useState(0);
   const [aroma, setAroma] = useState(0);
   const [temperature, setTemperature] = useState(0);
-  const [bitterness, setBitterness] = useState(0);
+  const [acidity, setAcidity] = useState(0);  // Changed from setBitterness
   const [overallEnjoyment, setOverallEnjoyment] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
   const [popupContent, setPopupContent] = useState("");
@@ -356,15 +356,15 @@ ${parameterToAdjust}: [number]
 
             </div>
 
-            {/* Bitterness */}
+            {/* Acidity */}
             <div className="question">
-              <div className="question-title">Bitterness</div>
+              <div className="question-title">Acidity</div>
               <div className="scale">
                 {[1,2,3,4,5].map((value) => (
                     <span
-                        key={`bitterness-${value}`}
-                        className={`dot ${bitterness >= value ? 'filled' : ''}`}
-                        onClick={() => setBitterness(value)}
+                        key={`acidity-${value}`}
+                        className={`dot ${acidity >= value ? 'filled' : ''}`}
+                        onClick={() => setAcidity(value)}
                     ></span>
                 ))}
               </div>

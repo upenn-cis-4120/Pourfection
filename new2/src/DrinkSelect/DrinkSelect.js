@@ -110,28 +110,6 @@ export const DrinkSelect = ({ switchPage }) => {
           style={{ cursor: 'pointer' }}
         />
 
-        <div className="overlap-2"
-        onClick={handleContinue}
-          style={{ cursor: 'pointer' }}>
-          <div className="text-wrapper-2">Other</div>
-
-          <div className="text-wrapper-3">...type here</div>
-
-          <img
-            className="rectangle-5"
-            alt="Rectangle"
-            src="/imagesDrinkSelect/rectangle-58.svg"
-          />
-
-          <div className="text-wrapper-4">Done</div>
-
-          <img
-            className="coffee-beans"
-            alt="Coffee beans"
-            src="/imagesDrinkSelect/coffee-beans@2x.png"
-          />
-        </div>
-
         <img
           className="rectangle-6"
           alt="Rectangle"
