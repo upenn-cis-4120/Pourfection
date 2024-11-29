@@ -548,16 +548,18 @@
 
 .Feedback .popup {
   position: fixed;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #d5c3a1; /* Background brown */
-  border: 2px solid #8c5a3e; /* Darker brown outline */
+  top: 20%; /* Changed from 80% to 20% to position at top */
+  left: 50.3%;
+  transform: translate(-50%, -20%); /* Changed from -50%, -50% to -50%, -20% */
+  background-color: #adc491;
+  border: 2px solid #8c5a3e;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow for better visibility */
   z-index: 1000;
   width: 300px;
   padding: 20px;
+  max-height: 80vh; /* Add max height */
+  overflow-y: auto; /* Add scrolling if content is too long */
 }
 
 .Feedback .popup-content {
@@ -566,9 +568,38 @@
 
 .Feedback .popup .close {
   position: absolute;
-  top: -30px;
-  right: -10px;
-  font-size: 20px;
+  top: -10px;          /* Changed from -30px to -15px */
+  right: -30px;          /* Changed from -10px to 5px */
+  font-size: 28px;     /* Increased from 20px to 28px */
   cursor: pointer;
-  color: #8c5a3e; /* Darker brown color for the close button */
+  color: #8c5a3e;
+  padding: 5px 10px;   /* Added padding for larger hit area */
+  font-weight: bold;   /* Make it more visible */
+  line-height: 1;      /* Ensure proper vertical alignment */
+}
+
+.optimization-result {
+  text-align: left;
+  padding: 10px;
+}
+
+.optimization-result h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.parameter-change {
+  font-weight: bold;
+  color: #2c5282;
+  margin: 8px 0;
+}
+
+.explanation {
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+.popup-content {
+  max-width: 500px;
+  width: 90%;
 }

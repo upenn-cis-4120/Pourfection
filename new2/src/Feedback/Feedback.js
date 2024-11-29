@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Feedback.css";
+import { useCoffeeParams } from '../context/CoffeeContext';
 
 export const Feedback = ({ switchPage }) => {
+  const { coffeeParams, updateParams } = useCoffeeParams();
   const [suggestion, setSuggestion] = useState("");
   const [smoothness, setSmoothness] = useState(0);
   const [strength, setStrength] = useState(0);
@@ -13,6 +15,8 @@ export const Feedback = ({ switchPage }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [popupContent, setPopupContent] = useState("");
   const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [optimizationResult, setOptimizationResult] = useState("");
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -43,35 +47,170 @@ export const Feedback = ({ switchPage }) => {
     navigate('/feedback'); 
   }
 
-  const handleSubmitFeedback = () => {
-    // Get current values from input fields
-    const weightInput = document.querySelector('.overlap-group .editable-input').value;
-    const grindInput = document.querySelector('.overlap-2 .editable-input').value;
-    const pressureInput = document.querySelector('.overlap-3 .editable-input').value;
-    const timeInput = document.querySelector('.overlap-4 .editable-input').value;
+  const callGemini = async (prompt) => {
+    const API_KEY = 'AIzaSyBC2Ekvy7t4URUiW4DLIT0riTTlIIu8mSY';
+    const API_URL = 'https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent';
     
-    console.log('Raw feedback data:', {
-      currentSettings: {
-        weight: weightInput,
-        grindSize: grindInput,
-        pressure: pressureInput,
-        extractionTime: timeInput
-      },
-      ratings: {
-        smoothness,
-        strength,
-        aroma,
-        temperature,
-        bitterness,
-        overallEnjoyment
-      },
-      additionalFeedback: suggestion
+    const response = await fetch(`${API_URL}?key=${API_KEY}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{
+          role: "user",
+          parts: [{ text: prompt }]
+        }],
+        generationConfig: {
+          temperature: 0.9,
+          topK: 1,
+          topP: 1,
+          maxOutputTokens: 2048,
+        }
+      })
     });
 
-    // Show the feedback submitted pop-up
-    setPopupContent("Feedback Submitted");
-    setShowPopup(true);
-    setFeedbackSubmitted(true);
+    if (!response.ok) throw new Error(`API call failed: ${response.status}`);
+    return await response.json();
+  };
+
+  const formatGeminiResponse = (responseText) => {
+    const lines = responseText.split('\n');
+    const parameterLine = lines[0];
+    const explanation = lines.slice(1).join('\n').trim();
+    
+    // Map short parameter names to their full names
+    const parameterNames = {
+      'grind': 'Grind size',
+      'weight': 'Coffee Weight',
+      'pressure': 'Pressure',
+      'time': 'Extraction Time'
+    };
+
+    // Replace the short parameter name with the full name
+    const formattedParameter = Object.entries(parameterNames).reduce(
+      (line, [short, full]) => line.replace(short + ':', full + ':'),
+      parameterLine
+    );
+    
+    return {
+      parameter: formattedParameter,
+      explanation: explanation
+    };
+  };
+
+  const handleSubmitFeedback = async () => {
+    try {
+      setIsLoading(true);
+      
+      // Check if feedback is positive
+      const isGoodFeedback = suggestion.toLowerCase().match(/good|great|nice|perfect|excellent|amazing|love/);
+      const hasGoodRatings = overallEnjoyment >= 4;
+
+      if (isGoodFeedback || hasGoodRatings) {
+        setOptimizationResult("Your coffee parameters are already optimized!");
+        setPopupContent(
+          <div className="optimization-result">
+            <h3>Great Job!</h3>
+            <p className="explanation">Your current settings are producing excellent results. Keep using these parameters for consistently good coffee!</p>
+          </div>
+        );
+        setShowPopup(true);
+        setFeedbackSubmitted(true);
+        setIsLoading(false);
+        return;
+      }
+
+      // Use context values instead of querying DOM
+      const { weight, grindSize, pressure, extractionTime } = coffeeParams;
+
+      // First analyze the text feedback
+      let parameterToAdjust;
+      if (suggestion.toLowerCase().includes('flavor') || suggestion.toLowerCase().includes('aroma')) {
+        parameterToAdjust = 'grind';
+      } else if (suggestion.toLowerCase().includes('weak') || suggestion.toLowerCase().includes('watery')) {
+        parameterToAdjust = 'weight';
+      } else if (suggestion.toLowerCase().includes('fast') || suggestion.toLowerCase().includes('slow')) {
+        parameterToAdjust = 'time';
+      } else if (suggestion.toLowerCase().includes('pressure') || suggestion.toLowerCase().includes('flow')) {
+        parameterToAdjust = 'pressure';
+      } else {
+        // Fallback to ratings if no clear indication in text
+        if (aroma < 3) {
+          parameterToAdjust = 'grind';  // Changed from bitterness to aroma
+        } else if (strength < 2) {
+          parameterToAdjust = 'weight';
+        } else if (overallEnjoyment < 3) {
+          parameterToAdjust = 'time';
+        } else {
+          parameterToAdjust = 'pressure';
+        }
+      }
+
+      // Format ratings, showing "Not rated" for 0 values
+      const formatRating = (value) => value === 0 ? "Not rated" : `${value}/5`;
+
+      const prompt = `As a coffee expert, analyze this feedback about an espresso shot and provide personalized advice:
+
+Your Feedback: "${suggestion}"
+
+Your Current Settings:
+- Coffee Weight: ${weight}
+- Grind Size: ${grindSize}
+- Pressure: ${pressure}
+- Extraction Time: ${extractionTime}
+
+How you rated your coffee:
+Smoothness: ${formatRating(smoothness)}
+Strength: ${formatRating(strength)}
+Aroma: ${formatRating(aroma)}
+Temperature: ${formatRating(temperature)}
+Overall: ${formatRating(overallEnjoyment)}
+
+Based on your feedback${suggestion ? " and ratings" : ""}, I'll suggest an adjustment to the ${parameterToAdjust}. I'll focus primarily on your text feedback${suggestion ? " and consider any ratings you provided as additional context" : ", since you haven't provided any ratings"}.
+
+Format your response as:
+${parameterToAdjust}: [number]
+
+[explanation addressing your specific feedback and how this change will improve your coffee experience]`;
+
+      const response = await callGemini(prompt);
+      const responseText = response.candidates[0].content.parts[0].text;
+      
+      const { parameter, explanation } = formatGeminiResponse(responseText);
+      
+      // Update global parameters based on Gemini's response
+      const paramMatch = parameter.match(/([\w\s]+):\s*(\d+\.?\d*)/);
+      if (paramMatch) {
+        const [_, paramName, value] = paramMatch;
+        const paramKey = {
+          'Coffee Weight': 'weight',
+          'Grind size': 'grindSize',
+          'Pressure': 'pressure',
+          'Extraction Time': 'extractionTime'
+        }[paramName.trim()];
+        
+        if (paramKey) {
+          updateParams({ [paramKey]: `${value}${paramKey === 'weight' ? 'g' : paramKey === 'pressure' ? ' bars' : paramKey === 'extractionTime' ? 's' : ''}` });
+        }
+      }
+
+      setOptimizationResult(responseText);
+      setPopupContent(
+        <div className="optimization-result">
+          <h3>Recommended Change</h3>
+          <p className="parameter-change">{parameter}</p>
+          <h3>Explanation</h3>
+          <p className="explanation">{explanation}</p>
+        </div>
+      );
+      setShowPopup(true);
+      setFeedbackSubmitted(true);
+      
+    } catch (error) {
+      setPopupContent(`Error: ${error.message}`);
+      setShowPopup(true);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleCloseFeedbackPopup = () => {
@@ -100,7 +239,8 @@ export const Feedback = ({ switchPage }) => {
               <input
                   type="text"
                   className="editable-input"
-                  defaultValue="8g"
+                  defaultValue={coffeeParams.weight}
+                  onChange={(e) => updateParams({ weight: e.target.value })}
               />
             </div>
         </div>
@@ -116,7 +256,8 @@ export const Feedback = ({ switchPage }) => {
             <input
               type="text"
               className="editable-input"
-              defaultValue="4.5"
+              defaultValue={coffeeParams.grindSize}
+              onChange={(e) => updateParams({ grindSize: e.target.value })}
             />
           </div>
         </div>
@@ -132,7 +273,8 @@ export const Feedback = ({ switchPage }) => {
             <input
               type="text"
               className="editable-input"
-              defaultValue="9 bars"
+              defaultValue={coffeeParams.pressure}
+              onChange={(e) => updateParams({ pressure: e.target.value })}
             />
           </div>
         </div>
@@ -148,7 +290,8 @@ export const Feedback = ({ switchPage }) => {
             <input
               type="text"
               className="editable-input"
-              defaultValue="18s"
+              defaultValue={coffeeParams.extractionTime}
+              onChange={(e) => updateParams({ extractionTime: e.target.value })}
             />
           </div>
         </div>
@@ -280,7 +423,15 @@ export const Feedback = ({ switchPage }) => {
           <div className="popup" onClick={handleCloseFeedbackPopup}>
             <div className="popup-content" onClick={(e) => e.stopPropagation()}>
               <span className="close" onClick={handleCloseFeedbackPopup}>&times;</span>
-              <p>{popupContent}</p>
+              {typeof popupContent === 'string' ? <p>{popupContent}</p> : popupContent}
+            </div>
+          </div>
+        )}
+
+        {isLoading && (
+          <div className="popup">
+            <div className="popup-content">
+              <p>Analyzing your coffee parameters...</p>
             </div>
           </div>
         )}

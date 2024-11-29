@@ -1,9 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useCoffeeParams } from '../context/CoffeeContext';
 import "./ExtractionSettings.css";
 
 const ExtractionSettings = () => {
   const navigate = useNavigate();
+  const { coffeeParams, updateParams } = useCoffeeParams();  // Add updateParams
 
   const handleContinue = () => {
     navigate('/timer');
@@ -36,6 +38,10 @@ const ExtractionSettings = () => {
   const handleFeedback = () => {
     navigate('/feedback'); 
   }
+
+  const handleParamChange = (param, value) => {
+    updateParams({ [param]: value });
+  };
 
   return (
     <div className="ExtractionSettings">
@@ -72,19 +78,34 @@ const ExtractionSettings = () => {
         </div>
 
         <div className="div-wrapper">
-          <div className="text-wrapper-2">8 g</div>
+          <input
+            type="text"
+            className="text-wrapper-2"
+            value={coffeeParams.weight}
+            onChange={(e) => handleParamChange('weight', e.target.value)}
+          />
         </div>
 
         <div className="text-wrapper-3">Coffee Weight</div>
 
         <div className="overlap-2">
-          <div className="text-wrapper-4">4.5</div>
+          <input
+            type="text"
+            className="text-wrapper-4"
+            value={coffeeParams.grindSize}
+            onChange={(e) => handleParamChange('grindSize', e.target.value)}
+          />
         </div>
 
         <div className="text-wrapper-5">Grind Size</div>
 
         <div className="overlap-3">
-          <div className="text-wrapper-6">10 Ba</div>
+          <input
+            type="text"
+            className="text-wrapper-6"
+            value={coffeeParams.pressure}
+            onChange={(e) => handleParamChange('pressure', e.target.value)}
+          />
         </div>
 
         <p className="pressure">
@@ -93,7 +114,12 @@ const ExtractionSettings = () => {
         </p>
 
         <div className="overlap-4">
-          <div className="text-wrapper-8">18 s</div>
+          <input
+            type="text"
+            className="text-wrapper-8"
+            value={coffeeParams.extractionTime}
+            onChange={(e) => handleParamChange('extractionTime', e.target.value)}
+          />
         </div>
 
         <div className="overlap-5"
