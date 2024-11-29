@@ -57,7 +57,7 @@
 }
 
 .Timer .frame-2 {
-  background-color: #7b8d42;
+  background-color: #ffffff; /* Changed from #7b8d42 to white */
   border-radius: 15px;
   height: 338px;
   left: 27px;
@@ -68,7 +68,7 @@
 }
 
 .Timer .text-wrapper-2 {
-  color: #b8794b;
+  color: #e3ebf8;
   font-family: "Open Sans", Helvetica;
   font-size: 86px;
   font-weight: 500;
@@ -84,11 +84,11 @@
 }
 
 .Timer .btn {
-  height: 72px;
-  left: 58px;
+  height: 300px; /* Increased height */
+  left: -175px;
   position: absolute;
-  top: 244px;
-  width: 222px;
+  top: 54px;
+  width: 700px; /* Increased width */
 }
 
 .Timer .frame-wrapper {
@@ -178,7 +178,7 @@
   font-weight: 700;
 }
 .Timer .frame-2 {
-  background-color: #7b8d42;
+  background-color: #ffffff;
   border-radius: 15px;
   height: 338px;
   left: 27px;
@@ -191,7 +191,7 @@
 .coffee-cup {
   width: 100%; /* Adjust as needed */
   height: 100%; /* Adjust as needed */
-  background-image: url('./../../public/imagesTimer/coffee-jpg-cis4120.jpg');
+  background-image: url('./../../public/imagesTimer/coffee-jpg-cis4120.2.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -200,7 +200,7 @@
   width: 100%; /* Adjust as needed */
   height: 100%; /* Adjust as needed */
   animation-play-state: running; /* Play animation when isRunning is true */
-  background-image: url('./../../public/imagesTimer/coffee-gif-cis4120.gif');
+  background-image: url('./../../public/imagesTimer/coffee-gif-cis4120.2.gif');
 
 }
 

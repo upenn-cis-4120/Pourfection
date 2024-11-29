@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Parameters Optimizer</title>
+    <script src="https://generativeai.googleapis.com/v1beta/models?key=AIzaSyBC2Ekvy7t4URUiW4DLIT0riTTlIIu8mSY"></script>
+</head>
+<body>
+    <h1>Coffee Parameters Optimizer</h1>
+    <div>
+        <h3>Current Settings</h3>
+        <input type="number" id="weightInput" placeholder="Coffee Weight (g)" value="8">
+        <input type="number" id="grindInput" placeholder="Grind Size" value="4.5">
+        <input type="number" id="pressureInput" placeholder="Pressure (bars)" value="9">
+        <input type="number" id="timeInput" placeholder="Extraction Time (s)" value="18">
+
+        <h3>Ratings (1-5)</h3>
+        <input type="number" id="smoothness" placeholder="Smoothness" min="1" max="5" value="3">
+        <input type="number" id="strength" placeholder="Strength" min="1" max="5" value="3">
+        <input type="number" id="aroma" placeholder="Aroma" min="1" max="5" value="3">
+        <input type="number" id="temperature" placeholder="Temperature" min="1" max="5" value="3">
+        <input type="number" id="bitterness" placeholder="Bitterness" min="1" max="5" value="5">
+        <input type="number" id="overallEnjoyment" placeholder="Overall Enjoyment" min="1" max="5" value="2">
+
+        <textarea id="suggestion" placeholder="Additional feedback">very bitter</textarea>
+        
+        <button onclick="optimizeParameters()">Optimize</button>
+        <p id="displayText"></p>
+        <div id="loading" style="display: none;">Analyzing your coffee parameters...</div>
+        
+        <div id="parameters" style="margin-top: 20px;">
+            <h3>Recommended Parameters:</h3>
+            <div id="coffeeWeight"></div>
+            <div id="grindSize"></div>
+            <div id="pressure"></div>
+            <div id="extractionTime"></div>
+        </div>
+        
+        <div id="recommendation" style="margin-top: 20px;">
+            <h3>Recommendation:</h3>
+            <div id="aiResponse"></div>
+        </div>
+    </div>
+
+    <script>
+    async function callGemini(prompt) {
+        const API_KEY = 'AIzaSyBC2Ekvy7t4URUiW4DLIT0riTTlIIu8mSY';
+        const API_URL = 'https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent';
+        
+        const response = await fetch(`${API_URL}?key=${API_KEY}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                contents: [{
+                    role: "user",
+                    parts: [{
+                        text: prompt
+                    }]
+                }],
+                generationConfig: {
+                    temperature: 0.9,
+                    topK: 1,
+                    topP: 1,
+                    maxOutputTokens: 2048,
+                }
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`API call failed: ${response.status} ${response.statusText}`);
+        }
+        
+        return await response.json();
+    }
+
+    async function optimizeParameters() {
+        const currentParams = {
+            weight: document.getElementById('weightInput').value,
+            grind: document.getElementById('grindInput').value,
+            pressure: document.getElementById('pressureInput').value,
+            time: document.getElementById('timeInput').value,
+            smoothness: document.getElementById('smoothness').value,
+            strength: document.getElementById('strength').value,
+            aroma: document.getElementById('aroma').value,
+            temperature: document.getElementById('temperature').value,
+            bitterness: document.getElementById('bitterness').value,
+            overall: document.getElementById('overallEnjoyment').value,
+            feedback: document.getElementById('suggestion').value
+        };
+
+        // Check if feedback is positive
+        const isGoodFeedback = currentParams.feedback.toLowerCase().match(/good|great|nice|perfect|excellent|amazing/);
+        const hasGoodRatings = currentParams.overall >= 4 && currentParams.bitterness <= 3;
+
+        if (isGoodFeedback || hasGoodRatings) {
+            document.getElementById('aiResponse').innerText = "Your coffee parameters are already optimized! No changes needed.";
+            return;
+        }
+
+        // Determine which parameter to adjust based on feedback
+        let parameterToAdjust;
+        if (currentParams.bitterness > 4 || currentParams.feedback.toLowerCase().includes('bitter')) {
+            parameterToAdjust = 'grind';  // Make grind coarser for bitter taste
+        } else if (currentParams.strength < 2) {
+            parameterToAdjust = 'weight';  // Increase dose for weak coffee
+        } else if (currentParams.overall < 3) {
+            parameterToAdjust = 'time';    // Adjust time for general improvement
+        } else {
+            parameterToAdjust = 'pressure'; // Default to pressure adjustment
+        }
+
+        const prompt = `As a coffee expert, please optimize the ${parameterToAdjust} parameter for better results, keeping other parameters unchanged:
+
+Current Parameters:
+- Coffee Weight: ${currentParams.weight}g
+- Grind Size: ${currentParams.grind}
+- Pressure: ${currentParams.pressure} bars
+- Extraction Time: ${currentParams.time}s
+
+Current Results (rated 1-5):
+- Smoothness: ${currentParams.smoothness}/5
+- Strength: ${currentParams.strength}/5
+- Aroma: ${currentParams.aroma}/5
+- Temperature: ${currentParams.temperature}/5
+- Bitterness: ${currentParams.bitterness}/5
+- Overall: ${currentParams.overall}/5
+- User Feedback: ${currentParams.feedback}
+
+Please provide:
+1. Only the optimized ${parameterToAdjust} value (keep other parameters exactly the same)
+2. A brief explanation of why this change would improve the coffee.
+
+Format your response as:
+${parameterToAdjust}: [number]
+
+[explanation]`;
+
+        document.getElementById('loading').style.display = 'block';
+        
+        try {
+            const response = await callGemini(prompt);
+            const responseText = response.candidates[0].content.parts[0].text;
+            
+            // Parse parameters
+            const lines = responseText.split('\n');
+            const parameters = {
+                weight: lines.find(l => l.includes('weight'))?.match(/\d+\.?\d*/)?.[0] || 'N/A',
+                grind: lines.find(l => l.includes('grind'))?.match(/\d+\.?\d*/)?.[0] || 'N/A',
+                pressure: lines.find(l => l.includes('pressure'))?.match(/\d+\.?\d*/)?.[0] || 'N/A',
+                time: lines.find(l => l.includes('time'))?.match(/\d+\.?\d*/)?.[0] || 'N/A'
+            };
+            
+            // Update input fields with optimized values
+            document.getElementById('weightInput').value = parameters.weight;
+            document.getElementById('grindInput').value = parameters.grind;
+            document.getElementById('pressureInput').value = parameters.pressure;
+            document.getElementById('timeInput').value = parameters.time;
+            
+            // Reset feedback fields
+            document.getElementById('smoothness').value = '';
+            document.getElementById('strength').value = '';
+            document.getElementById('aroma').value = '';
+            document.getElementById('temperature').value = '';
+            document.getElementById('bitterness').value = '';
+            document.getElementById('overallEnjoyment').value = '';
+            document.getElementById('suggestion').value = '';
+            
+            // Display recommendation text
+            document.getElementById('aiResponse').innerText = responseText.split('\n\n').slice(-1)[0];
+        } catch (error) {
+            document.getElementById('aiResponse').innerText = "Error: " + error.message;
+        }
+        
+        document.getElementById('loading').style.display = 'none';
+    }
+    </script>
+</body>
+</html>

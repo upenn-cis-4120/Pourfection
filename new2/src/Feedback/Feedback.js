@@ -8,7 +8,7 @@ export const Feedback = ({ switchPage }) => {
   const [strength, setStrength] = useState(0);
   const [aroma, setAroma] = useState(0);
   const [temperature, setTemperature] = useState(0);
-  const [acidity, setAcidity] = useState(0);
+  const [bitterness, setBitterness] = useState(0);
   const [overallEnjoyment, setOverallEnjoyment] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
   const [popupContent, setPopupContent] = useState("");
@@ -44,6 +44,30 @@ export const Feedback = ({ switchPage }) => {
   }
 
   const handleSubmitFeedback = () => {
+    // Get current values from input fields
+    const weightInput = document.querySelector('.overlap-group .editable-input').value;
+    const grindInput = document.querySelector('.overlap-2 .editable-input').value;
+    const pressureInput = document.querySelector('.overlap-3 .editable-input').value;
+    const timeInput = document.querySelector('.overlap-4 .editable-input').value;
+    
+    console.log('Raw feedback data:', {
+      currentSettings: {
+        weight: weightInput,
+        grindSize: grindInput,
+        pressure: pressureInput,
+        extractionTime: timeInput
+      },
+      ratings: {
+        smoothness,
+        strength,
+        aroma,
+        temperature,
+        bitterness,
+        overallEnjoyment
+      },
+      additionalFeedback: suggestion
+    });
+
     // Show the feedback submitted pop-up
     setPopupContent("Feedback Submitted");
     setShowPopup(true);
@@ -189,15 +213,15 @@ export const Feedback = ({ switchPage }) => {
 
             </div>
 
-            {/* Acidity */}
+            {/* Bitterness */}
             <div className="question">
-              <div className="question-title">Acidity</div>
+              <div className="question-title">Bitterness</div>
               <div className="scale">
                 {[1,2,3,4,5].map((value) => (
                     <span
-                        key={`acidity-${value}`}
-                        className={`dot ${acidity >= value ? 'filled' : ''}`}
-                        onClick={() => setAcidity(value)}
+                        key={`bitterness-${value}`}
+                        className={`dot ${bitterness >= value ? 'filled' : ''}`}
+                        onClick={() => setBitterness(value)}
                     ></span>
                 ))}
               </div>
@@ -222,6 +246,7 @@ export const Feedback = ({ switchPage }) => {
             placeholder="Enter your feedback here..."
             value={suggestion}
             onChange={(e) => setSuggestion(e.target.value)}
+            style={{ resize: "none" }}
           />
           <img
             className="rectangle-5"
@@ -240,7 +265,14 @@ export const Feedback = ({ switchPage }) => {
             onClick={() => switchPage('DrinkSelect')}
             style={{ cursor: 'pointer' }}
           />
-          <div className="submit-feedback-wrapper" onClick={handleSubmitFeedback} style={{ cursor: 'pointer' }}>
+          <div 
+            className="submit-feedback-wrapper" 
+            onClick={handleSubmitFeedback} 
+            style={{ cursor: 'pointer' }}
+            role="button"
+            onKeyDown={(e) => e.key === 'Enter' && handleSubmitFeedback()}
+            tabIndex={0}
+          >
             Submit Feedback
           </div>
 

@@ -8,7 +8,7 @@
 
 .ExtractionSettings .div {
   background-color: #d5c3a1;
-  height: 852px;
+  height: 780px; /* Changed from 852px to end just after the Extract button */
   position: relative;
   width: 393px;
 }
@@ -26,7 +26,7 @@
   font-family: "Playfair", Helvetica;
   font-size: 52px;
   font-weight: 400;
-  left: 11px;
+  left: 0px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -42,7 +42,7 @@
   font-family: "Open Sans", Helvetica;
   font-size: 16px;
   font-weight: 400;
-  left: 11px;
+  left: 0px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -221,7 +221,7 @@
   height: 62px;
   left: 14px;
   position: absolute;
-  top: 622px;
+  top: 582px; /* Changed from 622px */
   width: 176px;
 }
 
@@ -242,7 +242,7 @@
   height: 100px;
   left: 14px;
   position: absolute;
-  top: 716px;
+  top: 666px; /* Changed from 716px */
   width: 338px;
 }
 
@@ -284,9 +284,9 @@
   background-image: url(https://c.animaapp.com/S3wv82L4/img/rectangle-50.svg);
   background-size: 100% 100%;
   height: 62px;
-  left: 208px;
+  left: 209px;
   position: absolute;
-  top: 622px;
+  top: 582px; /* Changed from 622px */
   width: 176px;
 }
 

@@ -41,7 +41,7 @@ const ExtractionSettings = () => {
     <div className="ExtractionSettings">
       <div className="div">
         <div className="overlap">
-          <div className="text-wrapper">Extraction Settings</div>
+          <div className="text-wrapper centered">Extraction Settings</div>
           <div className="subtext">Based on your machine/drink, we recommend:</div>
 
           <div className="group">

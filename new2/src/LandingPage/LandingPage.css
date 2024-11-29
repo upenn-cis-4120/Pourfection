@@ -4,13 +4,15 @@
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .LandingPage .div {
   background-color: #d5c3a1;
   height: 852px;
   position: relative;
-  width: 393px;
+  width: 100%; /* Adjust width to 100% */
+  max-width: 393px; /* Set a max-width to maintain layout */
 }
 
 .LandingPage .overlap {
