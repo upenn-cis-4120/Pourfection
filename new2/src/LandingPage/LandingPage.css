@@ -60,7 +60,7 @@
   height: 167px;
   left: 14px;
   position: absolute;
-  top: 515px;
+  top: 515px;  
   width: 364px;
 }
 
@@ -70,6 +70,12 @@
   position: absolute;
   top: 9px;
   width: 335px;
+  cursor: pointer; /* Make it a button */
+}
+
+.LandingPage .overlap-5.selected {
+  border-color: #8c5a3e; /* Darker brown color when selected */
+  border-width: 2pt;
 }
 
 .LandingPage .text-wrapper-2 {
@@ -149,6 +155,12 @@
   position: absolute;
   top: 59px;
   width: 124px;
+  cursor: pointer; /* Make it a button */
+}
+
+.LandingPage .overlap-5.selected {
+  background-color: #8c5a3e; /* Darker brown color when selected */
+  border-color: #8c5a3e; /* Darker brown color when selected */
 }
 
 .LandingPage .rectangle-2 {

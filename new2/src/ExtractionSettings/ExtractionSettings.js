@@ -80,7 +80,7 @@ const ExtractionSettings = () => {
         <div className="div-wrapper">
           <input
             type="text"
-            className="text-wrapper-2"
+            className="text-wrapper-settings"
             value={coffeeParams.weight}
             onChange={(e) => handleParamChange('weight', e.target.value)}
           />

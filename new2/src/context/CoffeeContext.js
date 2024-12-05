@@ -12,10 +12,10 @@ export const useCoffeeParams = () => {
 
 export const CoffeeProvider = ({ children }) => {
   const [coffeeParams, setCoffeeParams] = useState({
-    weight: '18g',
+    weight: '7g',
     grindSize: '15',
-    pressure: '9 bars',
-    extractionTime: '25s'
+    pressure: 'N/A',
+    extractionTime: '18s'
   });
 
   const updateParams = (newParams) => {

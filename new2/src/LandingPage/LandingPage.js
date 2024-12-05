@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
 
-
 export const LandingPage = ({ switchPage }) => {
   const navigate = useNavigate();
+  const [selectedMachine, setSelectedMachine] = useState(false);
+  const [selectedGrinder, setSelectedGrinder] = useState(false);
 
   const handleContinue = () => {
     navigate('/drink-select');
@@ -37,6 +38,14 @@ export const LandingPage = ({ switchPage }) => {
   const handleFeedback = () => {
     navigate('/feedback'); 
   }
+
+  const toggleMachineSelection = () => {
+    setSelectedMachine(!selectedMachine);
+  };
+
+  const toggleGrinderSelection = () => {
+    setSelectedGrinder(!selectedGrinder);
+  };
 
   return (
     <div className="LandingPage">
@@ -72,7 +81,7 @@ export const LandingPage = ({ switchPage }) => {
         </div>
 
         <div className="overlap-2">
-          <div className="overlap-3">
+          <div className={`overlap-3 ${selectedGrinder ? 'selected' : ''}`} onClick={toggleGrinderSelection}>
             <div className="text-wrapper-2">Select Grinder</div>
 
             <img
@@ -104,7 +113,7 @@ export const LandingPage = ({ switchPage }) => {
             />
           </div>
 
-          <div className="overlap-5">
+          <div className={`overlap-5 ${selectedMachine ? 'selected' : ''}`} onClick={toggleMachineSelection}>
             <div className="rectangle-2" />
 
             <img
@@ -179,4 +188,5 @@ export const LandingPage = ({ switchPage }) => {
     </div>
   );
 };
+
 export default LandingPage;
