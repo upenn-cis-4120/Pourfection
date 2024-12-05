@@ -1,6 +1,8 @@
 # Introduction
 Brewing the perfect cup of espresso is both an art and a science. For many home baristas, the journey is often filled with trial and error, frustration, and an overwhelming array of variables to manage. **Pourfection** was born out of a desire to simplify this process, making high-quality espresso accessible to everyone—from beginners pulling their first shot to seasoned enthusiasts fine-tuning their craft.
 
+![alt text](https://github.com/upenn-cis-4120/Pourfection/blob/main/images/action_shot.jpg?raw=true)
+
 # Motivation
 Home espresso brewing presents unique challenges. Achieving consistency across batches requires precise control over variables such as grind size, dose, tamp pressure, water temperature, and extraction time. However, most entry-level equipment lacks the feedback mechanisms needed to guide users in real time. This gap leaves many beginners guessing, leading to wasted coffee, time, and effort.
 
