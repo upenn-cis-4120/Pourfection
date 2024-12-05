@@ -71,9 +71,7 @@ We began with hand-drawn sketches and basic wireframes to visualize how users wo
 - **User Flow:** How a user would navigate through the app from start to finish.
 - **Core Functionality:** How real-time feedback and data visualization would be presented.
 
-![alt text](https://github.com/upenn-cis-4120/Pourfection/blob/main/images/lofi_1.jpg?raw=true)
-![alt text](https://github.com/upenn-cis-4120/Pourfection/blob/main/images/lofi_2.jpg?raw=true)
-![alt text](https://github.com/upenn-cis-4120/Pourfection/blob/main/images/lofi_3.jpg?raw=true)
+![alt text](https://github.com/upenn-cis-4120/Pourfection/blob/main/images/lofi.png?raw=true)
 **Figure:** Low-fidelity prototypes showing two potential designs. After interactive testing, we selected the design on the right for its cleaner interface and more intuitive flow.
 
 ## Mid-Fidelity Prototypes
