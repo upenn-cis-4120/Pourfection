@@ -162,7 +162,7 @@ Your Feedback: "${suggestion}"
 Your Current Settings:
 - Coffee Weight: ${weight}
 - Grind Size: ${grindSize}
-- Pressure: ${pressure}
+- Pressure: ${pressure !== 'N/A' ? pressure : 'Not applicable'}
 - Extraction Time: ${extractionTime}
 
 How you rated your coffee:

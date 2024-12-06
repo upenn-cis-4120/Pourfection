@@ -8,7 +8,7 @@
 
 .ExtractionSettings .div {
   background-color: #d5c3a1;
-  height: 980px; /* Changed from 852px to end just after the Extract button */
+  height: 852px; /* Changed from 852px to end just after the Extract button */
   position: relative;
   width: 393px;
 }

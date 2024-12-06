@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import { useCoffeeParams } from '../context/CoffeeContext';
 import "./Timer.css";
 
 export const Timer = ({ switchPage }) => {
-  const [time, setTime] = useState(18); // Initial time in seconds (18 seconds)
+  const { coffeeParams, updateParams } = useCoffeeParams();
+  const [time, setTime] = useState(parseInt(coffeeParams.extractionTime)); // Initial time from coffeeParams
   const [isRunning, setIsRunning] = useState(false);
 
   // Format time as mm:ss
@@ -17,7 +19,14 @@ export const Timer = ({ switchPage }) => {
   useEffect(() => {
     if (!isRunning) return;
     const timerInterval = setInterval(() => {
-      setTime((prevTime) => prevTime - 1);
+      setTime((prevTime) => {
+        if (prevTime <= 0) {
+          clearInterval(timerInterval);
+          setIsRunning(false);
+          return 0;
+        }
+        return prevTime - 1;
+      });
     }, 1000);
 
     // Clear interval when component unmounts or timer stops
@@ -30,6 +39,7 @@ export const Timer = ({ switchPage }) => {
   const navigate = useNavigate();
 
   const handleContinue = () => {
+    updateParams({ extractionTime: `${time}s` });
     navigate('/feedback');
   };
 
@@ -137,7 +147,7 @@ export const Timer = ({ switchPage }) => {
               <br />
             </span>
 
-            <span className="text-wrapper-4">18 Seconds</span>
+            <span className="text-wrapper-4">{coffeeParams.extractionTime}</span>
           </p>
         </div>
       </div>
