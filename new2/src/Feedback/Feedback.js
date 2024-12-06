@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Feedback.css";
 import { useCoffeeParams } from '../context/CoffeeContext';
@@ -18,6 +18,13 @@ export const Feedback = ({ switchPage }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [optimizationResult, setOptimizationResult] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Ensure the coffee weight input field is updated correctly
+    if (!coffeeParams.weight) {
+      updateParams({ weight: '0g' });
+    }
+  }, [coffeeParams.weight, updateParams]);
 
   const handleBack = () => {
     navigate(-1); // Go back to the previous page
@@ -476,4 +483,4 @@ ${parameterToAdjust}: [number]
   );
 };
 
-export default Feedback
+export default Feedback;
