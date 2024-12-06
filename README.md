@@ -143,8 +143,3 @@ The majority of users preferred Interface A and expressed less stress rating pre
 
 # Impact of the Design Process
 The iterative design process allowed us to refine Pourfection effectively. By validating our assumptions through user testing at each stage, we ensured that the final product truly addressed the pain points identified during our initial research.
-
-# Conclusion of the Design Process
-Our journey in developing Pourfection underscored the importance of empathy and user engagement in design. By immersing ourselves in the experiences of home baristas, we were able to create a solution that not only simplifies the espresso brewing process but also enriches the user’s journey toward mastering their craft.
-
-Through careful research, creative ideation, rigorous testing, and thoughtful implementation, Pourfection evolved from a concept into a functional tool poised to make a meaningful impact in the world of home espresso brewing.
