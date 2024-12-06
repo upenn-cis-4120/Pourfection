@@ -133,8 +133,10 @@ export const Feedback = ({ switchPage }) => {
       let parameterToAdjust;
       if (suggestion.toLowerCase().includes('flavor') || suggestion.toLowerCase().includes('aroma')) {
         parameterToAdjust = 'grind';
-      } else if (suggestion.toLowerCase().includes('weak') || suggestion.toLowerCase().includes('watery')) {
+      } else if (suggestion.toLowerCase().includes('weak')) {
         parameterToAdjust = 'weight';
+      } else if (suggestion.toLowerCase().includes('watery')) {
+        parameterToAdjust = 'time'; // Changed from weight to time
       } else if (suggestion.toLowerCase().includes('fast') || suggestion.toLowerCase().includes('slow')) {
         parameterToAdjust = 'time';
       } else if (suggestion.toLowerCase().includes('pressure') || suggestion.toLowerCase().includes('flow')) {
@@ -162,7 +164,7 @@ Your Feedback: "${suggestion}"
 Your Current Settings:
 - Coffee Weight: ${weight}
 - Grind Size: ${grindSize}
-- Pressure: ${pressure}
+- Pressure: ${pressure !== 'N/A' ? pressure : 'Not applicable'}
 - Extraction Time: ${extractionTime}
 
 How you rated your coffee:
@@ -173,7 +175,7 @@ Temperature: ${formatRating(temperature)}
 Overall: ${formatRating(overallEnjoyment)}
 
 Based on your feedback${suggestion ? " and ratings" : ""}, I'll suggest an adjustment to the ${parameterToAdjust}. I'll focus primarily on your text feedback${suggestion ? " and consider any ratings you provided as additional context" : ", since you haven't provided any ratings"}.
-If the coffee is too watery, consider reducing the extraction time. If it's too strong, consider increasing the extraction time. 
+If the coffee is too watery, consider reducing the extraction time (extractionTime parameter). If it's too strong, consider increasing the extraction time. 
 
 Format your response as:
 ${parameterToAdjust}: [number]
