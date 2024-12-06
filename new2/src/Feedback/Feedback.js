@@ -16,7 +16,7 @@ export const Feedback = ({ switchPage }) => {
   const [popupContent, setPopupContent] = useState("");
   const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [optimizationResult, setOptimizationResult] = useState("");
+  const [_, setOptimizationResult] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -162,7 +162,7 @@ Your Feedback: "${suggestion}"
 Your Current Settings:
 - Coffee Weight: ${weight}
 - Grind Size: ${grindSize}
-- Pressure: ${pressure !== 'N/A' ? pressure : 'Not applicable'}
+- Pressure: ${pressure}
 - Extraction Time: ${extractionTime}
 
 How you rated your coffee:
@@ -173,6 +173,7 @@ Temperature: ${formatRating(temperature)}
 Overall: ${formatRating(overallEnjoyment)}
 
 Based on your feedback${suggestion ? " and ratings" : ""}, I'll suggest an adjustment to the ${parameterToAdjust}. I'll focus primarily on your text feedback${suggestion ? " and consider any ratings you provided as additional context" : ", since you haven't provided any ratings"}.
+If the coffee is too watery, consider reducing the extraction time. If it's too strong, consider increasing the extraction time. 
 
 Format your response as:
 ${parameterToAdjust}: [number]
